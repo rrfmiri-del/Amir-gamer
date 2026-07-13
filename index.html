@@ -1,216 +1,535 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Amir Gamer</title>
+<title>Amir Gamer | Official</title>
+
 
 <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap');
+
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:tahoma,Arial;
+font-family:'Vazirmatn',sans-serif;
 }
+
 
 body{
-background:#080808;
+
+background:#050505;
 color:white;
+overflow-x:hidden;
+
 }
+
+
+/* نورهای پس زمینه */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:500px;
+
+height:500px;
+
+background:#ff6600;
+
+filter:blur(180px);
+
+opacity:.25;
+
+top:-200px;
+
+left:-200px;
+
+z-index:-1;
+
+}
+
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:500px;
+
+height:500px;
+
+background:#ff9900;
+
+filter:blur(200px);
+
+opacity:.18;
+
+bottom:-200px;
+
+right:-200px;
+
+z-index:-1;
+
+}
+
+
+/* منو */
+
 
 header{
+
+position:fixed;
+
+top:0;
+
 width:100%;
+
 padding:20px 8%;
+
 display:flex;
+
 justify-content:space-between;
+
 align-items:center;
-background:#111;
-border-bottom:2px solid #ff6600;
+
+background:rgba(0,0,0,.55);
+
+backdrop-filter:blur(20px);
+
+border-bottom:1px solid rgba(255,102,0,.3);
+
+z-index:999;
+
 }
+
 
 .logo{
+
 font-size:35px;
-font-weight:bold;
+
+font-weight:900;
+
 color:#ff6600;
+
+text-shadow:0 0 20px #ff6600;
+
 }
+
 
 nav a{
+
 color:white;
+
 text-decoration:none;
-margin:10px;
+
+margin:0 15px;
+
+font-size:17px;
+
+transition:.3s;
+
 }
+
+
+nav a:hover{
+
+color:#ff6600;
+
+}
+
+
+/* صفحه اول */
+
 
 .hero{
-min-height:90vh;
+
+min-height:100vh;
+
 display:flex;
+
 align-items:center;
-justify-content:space-around;
-padding:50px 8%;
-background:
-linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.9)),
-url("hero.jpg");
-background-size:cover;
-background-position:center;
+
+justify-content:space-between;
+
+padding:130px 8% 50px;
+
+gap:50px;
+
 }
 
-.text h1{
-font-size:70px;
+
+
+.hero-text{
+
+width:50%;
+
 }
 
-.text span{
+
+.hero-text h1{
+
+font-size:75px;
+
+font-weight:900;
+
+line-height:1.2;
+
+}
+
+
+
+.hero-text h1 span{
+
 color:#ff6600;
+
+text-shadow:0 0 30px #ff6600;
+
 }
 
-.text p{
+
+
+.hero-text p{
+
+margin-top:25px;
+
 font-size:22px;
-margin-top:20px;
+
 color:#ccc;
+
+line-height:45px;
+
 }
+
+
+
+.buttons{
+
+margin-top:40px;
+
+display:flex;
+
+gap:20px;
+
+}
+
+
 
 .btn{
-display:inline-block;
-margin-top:30px;
+
 padding:15px 35px;
+
 background:#ff6600;
+
 color:white;
-text-decoration:none;
+
 border-radius:15px;
-}
 
-.photo img{
-width:350px;
-height:350px;
-object-fit:cover;
-border-radius:50%;
-border:5px solid #ff6600;
-box-shadow:0 0 40px #ff6600;
-}
-
-.section{
-padding:80px 8%;
-text-align:center;
-}
-
-.title{
-font-size:45px;
-color:#ff6600;
-margin-bottom:40px;
-}
-
-.cards{
-display:flex;
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
-}
-
-.card{
-background:#151515;
-padding:30px;
-border-radius:20px;
-width:280px;
-border:1px solid #333;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-border-color:#ff6600;
-}
-
-.card h2{
-color:#ff6600;
-margin-bottom:15px;
-}
-
-.card a{
-color:white;
 text-decoration:none;
+
+font-weight:bold;
+
+box-shadow:0 0 25px #ff6600;
+
+transition:.3s;
+
 }
+
+
+
+.btn:hover{
+
+transform:translateY(-8px);
+
+}
+
+
+.btn2{
+
+padding:15px 35px;
+
+border:2px solid #ff6600;
+
+color:#ff6600;
+
+border-radius:15px;
+
+text-decoration:none;
+
+}
+
+
+.hero-img{
+
+width:50%;
+
+text-align:center;
+
+}
+
+
+.hero-img img{
+
+width:420px;
+
+height:420px;
+
+object-fit:cover;
+
+border-radius:30px;
+
+border:4px solid #ff6600;
+
+box-shadow:
+
+0 0 30px #ff6600,
+
+0 0 80px rgba(255,102,0,.5);
+
+
+animation:float 4s infinite;
+
+}
+
+
+
+@keyframes float{
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+}
+
+
 
 </style>
 
 </head>
 
+
 <body>
+
 
 <header>
 
 <div class="logo">
+
 AMIR GAMER
+
 </div>
 
+
 <nav>
-<a href="#">خانه</a>
+
+<a href="#home">خانه</a>
+
+<a href="#about">درباره</a>
+
 <a href="#social">ارتباط</a>
+
 </nav>
+
 
 </header>
 
 
-<section class="hero">
 
-<div class="text">
+<section class="hero" id="home">
+
+
+<div class="hero-text">
+
 
 <h1>
-Amir <span>Gamer</span>
+
+AMIR
+
+<span>
+
+GAMER
+
+</span>
+
 </h1>
 
+
 <p>
+
 استریمر و تولید کننده محتوای گیمینگ
+
+<br>
+
+به دنیای رسمی Amir Gamer خوش آمدید 🎮
+
 </p>
 
+
+<div class="buttons">
+
 <a class="btn" href="https://www.aparat.com/Amirgamer_DVAmir23">
-کانال آپارات
+
+آپارات
+
 </a>
+
+
+<a class="btn2" href="#social">
+
+ارتباط با من
+
+</a>
+
 
 </div>
 
 
-<div class="photo">
+</div>
+
+
+
+<div class="hero-img">
 
 <img src="hero.jpg">
 
 </div>
 
 
-</section><section class="section" id="social">
 
-<h1 class="title">
-ارتباط با من
-</h1>
+</section><!-- PART 2 -->
+
+<section id="about" style="padding:100px 8%;">
+
+<h2 style="
+text-align:center;
+font-size:50px;
+color:#ff6600;
+margin-bottom:50px;
+">
+درباره Amir Gamer
+</h2>
 
 
-<div class="cards">
+<div style="
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+">
 
 
-<div class="card">
+<div style="
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,102,0,.3);
+padding:35px;
+border-radius:25px;
+max-width:700px;
+box-shadow:0 0 30px rgba(255,102,0,.15);
+">
+
+
+<h2 style="
+color:#ff6600;
+margin-bottom:20px;
+">
+🎮 گیمر | استریمر | تولید کننده محتوا
+</h2>
+
+
+<p style="
+font-size:20px;
+color:#ddd;
+line-height:45px;
+">
+
+من Amir Gamer هستم.
+
+<br>
+
+فعالیت من در زمینه گیمینگ و ساخت محتوای سرگرم‌کننده است.
+
+<br>
+
+هدف من ساختن لحظه‌های جذاب برای گیمرها و طرفداران بازیه.
+
+<br>
+
+به جمع کامیونیتی Amir Gamer خوش آمدید 🔥
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<section id="social" style="
+padding:100px 8%;
+">
+
+
+<h2 style="
+text-align:center;
+font-size:50px;
+color:#ff6600;
+margin-bottom:60px;
+">
+
+شبکه‌های اجتماعی
+
+</h2>
+
+
+
+<div style="
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+">
+
+
+
+<div class="social-box">
 
 <h2>📺 آپارات</h2>
 
 <p>
-ویدیوها و فعالیت‌های گیمینگ من
+کانال رسمی ویدیوها
 </p>
 
-<br>
-
 <a href="https://www.aparat.com/Amirgamer_DVAmir23">
-مشاهده کانال آپارات
+ورود به آپارات
 </a>
 
 </div>
 
 
 
-<div class="card">
+
+<div class="social-box">
 
 <h2>💬 ایتا</h2>
 
 <p>
-آیدی ایتا:
-<br>
 @Zafii_05
 </p>
 
@@ -218,13 +537,12 @@ Amir <span>Gamer</span>
 
 
 
-<div class="card">
+
+<div class="social-box">
 
 <h2>💬 بله</h2>
 
 <p>
-آیدی بله:
-<br>
 @zafii_05
 </p>
 
@@ -232,68 +550,2152 @@ Amir <span>Gamer</span>
 
 
 
-<div class="card">
+
+<div class="social-box">
 
 <h2>🎧 Discord</h2>
 
 <p>
-Username:
-<br>
 Amirgamer0219
 </p>
 
 </div>
 
 
+
 </div>
 
-</section>
+
+</section><!-- PART 3 -->
+
+<style>
+
+
+.social-box{
+
+background:
+
+linear-gradient(
+
+145deg,
+
+rgba(255,255,255,.08),
+
+rgba(255,255,255,.02)
+
+);
+
+
+border:1px solid rgba(255,102,0,.35);
+
+padding:35px;
+
+border-radius:25px;
+
+text-align:center;
+
+transition:.4s;
+
+box-shadow:
+
+0 0 25px rgba(0,0,0,.4);
+
+}
+
+
+.social-box:hover{
+
+transform:translateY(-15px) scale(1.03);
+
+border-color:#ff6600;
+
+box-shadow:
+
+0 0 40px rgba(255,102,0,.5);
+
+}
 
 
 
-<section class="section">
+.social-box h2{
 
+font-size:30px;
 
-<h1 class="title">
-درباره Amir Gamer
-</h1>
+color:#ff6600;
 
+margin-bottom:20px;
 
-<p style="font-size:22px;color:#ccc;line-height:45px">
-
-به دنیای گیمینگ Amir Gamer خوش آمدید 🎮
-
-<br>
-
-اینجا محل ارتباط با من و دنبال کردن فعالیت‌های گیمینگ منه.
-
-<br>
-
-با من همراه باشید برای محتواهای جذاب و لحظات خفن بازی.
-
-</p>
-
-
-</section>
+}
 
 
 
-<footer>
+.social-box p{
 
-<h2 style="color:#ff6600">
-AMIR GAMER 🎮
+font-size:20px;
+
+color:#ddd;
+
+margin-bottom:20px;
+
+}
+
+
+
+.social-box a{
+
+display:inline-block;
+
+padding:12px 30px;
+
+background:#ff6600;
+
+color:white;
+
+border-radius:12px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+
+
+.social-box a:hover{
+
+box-shadow:0 0 25px #ff6600;
+
+transform:scale(1.08);
+
+}
+
+
+
+/* بخش امکانات */
+
+
+.features{
+
+padding:100px 8%;
+
+}
+
+
+
+.features h2{
+
+text-align:center;
+
+font-size:50px;
+
+color:#ff6600;
+
+margin-bottom:50px;
+
+}
+
+
+
+.feature-grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:30px;
+
+}
+
+
+
+.feature{
+
+background:#111;
+
+border-radius:25px;
+
+padding:30px;
+
+text-align:center;
+
+border:1px solid #222;
+
+transition:.3s;
+
+}
+
+
+
+.feature:hover{
+
+border-color:#ff6600;
+
+transform:translateY(-10px);
+
+}
+
+
+
+.feature span{
+
+font-size:50px;
+
+}
+
+
+
+.feature h3{
+
+margin-top:20px;
+
+color:#ff6600;
+
+font-size:25px;
+
+}
+
+
+
+.feature p{
+
+color:#ccc;
+
+line-height:35px;
+
+margin-top:15px;
+
+}
+
+
+
+</style>
+
+
+
+<section class="features">
+
+
+<h2>
+ویژگی‌های Amir Gamer
 </h2>
 
-<br>
+
+<div class="feature-grid">
+
+
+<div class="feature">
+
+<span>🎮</span>
+
+<h3>
+Gaming
+</h3>
 
 <p>
-© تمام حقوق برای Amir Gamer محفوظ است
+محتوای گیمینگ و لحظه‌های جذاب
 </p>
+
+</div>
+
+
+
+<div class="feature">
+
+<span>🔥</span>
+
+<h3>
+Professional
+</h3>
+
+<p>
+طراحی حرفه‌ای مخصوص گیمرها
+</p>
+
+</div>
+
+
+
+
+<div class="feature">
+
+<span>⚡</span>
+
+<h3>
+Community
+</h3>
+
+<p>
+ارتباط با طرفداران و دوستان
+</p>
+
+</div>
+
+
+
+
+<div class="feature">
+
+<span>🏆</span>
+
+<h3>
+Amir Gamer
+</h3>
+
+<p>
+برند شخصی گیمینگ من
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section><!-- PART 4 -->
+
+
+<style>
+
+
+/* انیمیشن ورود */
+
+.hero-text,
+.hero-img,
+.social-box,
+.feature{
+
+animation:showUp 1s ease;
+
+}
+
+
+@keyframes showUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+/* دکمه بالا */
+
+
+.top-btn{
+
+position:fixed;
+
+bottom:25px;
+
+right:25px;
+
+width:55px;
+
+height:55px;
+
+border-radius:50%;
+
+background:#ff6600;
+
+color:white;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:25px;
+
+text-decoration:none;
+
+box-shadow:0 0 25px #ff6600;
+
+z-index:99;
+
+transition:.3s;
+
+}
+
+
+
+.top-btn:hover{
+
+transform:scale(1.15);
+
+}
+
+
+
+
+/* فوتر */
+
+
+.footer{
+
+background:#050505;
+
+padding:60px 8%;
+
+text-align:center;
+
+border-top:1px solid rgba(255,102,0,.3);
+
+}
+
+
+
+.footer h2{
+
+font-size:40px;
+
+color:#ff6600;
+
+text-shadow:0 0 20px #ff6600;
+
+}
+
+
+
+.footer p{
+
+margin-top:20px;
+
+color:#aaa;
+
+font-size:18px;
+
+line-height:35px;
+
+}
+
+
+
+
+.footer-links{
+
+margin-top:30px;
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+
+
+.footer-links a{
+
+color:white;
+
+text-decoration:none;
+
+padding:12px 25px;
+
+border:1px solid #ff6600;
+
+border-radius:12px;
+
+transition:.3s;
+
+}
+
+
+
+.footer-links a:hover{
+
+background:#ff6600;
+
+}
+
+
+
+
+/* موبایل */
+
+
+@media(max-width:800px){
+
+
+header{
+
+padding:20px 5%;
+
+}
+
+
+.logo{
+
+font-size:25px;
+
+}
+
+
+nav{
+
+display:none;
+
+}
+
+
+
+.hero{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+
+
+.hero-text{
+
+width:100%;
+
+}
+
+
+
+.hero-text h1{
+
+font-size:50px;
+
+}
+
+
+
+.hero-img{
+
+width:100%;
+
+}
+
+
+
+.hero-img img{
+
+width:280px;
+
+height:280px;
+
+}
+
+
+
+.buttons{
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+}
+
+
+}
+
+
+
+
+</style>
+
+
+
+
+<a href="#" class="top-btn">
+
+↑
+
+</a>
+
+
+
+
+<footer class="footer">
+
+
+<h2>
+
+AMIR GAMER 🎮
+
+</h2>
+
+
+
+<p>
+
+Official Gaming Website
+
+<br>
+
+ساخته شده برای کامیونیتی Amir Gamer
+
+</p>
+
+
+
+<div class="footer-links">
+
+
+<a href="https://www.aparat.com/Amirgamer_DVAmir23">
+
+Aparat
+
+</a>
+
+
+<a>
+
+Eitaa : @Zafii_05
+
+</a>
+
+
+<a>
+
+Bale : @zafii_05
+
+</a>
+
+
+<a>
+
+Discord : Amirgamer0219
+
+</a>
+
+
+</div>
+
 
 
 </footer>
 
 
+
 </body>
 
-</html>
+</html><!-- PART 5 -->
+
+
+<style>
+
+
+.stats{
+
+padding:100px 8%;
+
+display:grid;
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(200px,1fr));
+
+gap:30px;
+
+}
+
+
+
+.stat-box{
+
+background:
+
+rgba(255,255,255,.05);
+
+border:1px solid rgba(255,102,0,.3);
+
+border-radius:25px;
+
+padding:40px 20px;
+
+text-align:center;
+
+backdrop-filter:blur(15px);
+
+transition:.4s;
+
+}
+
+
+
+.stat-box:hover{
+
+transform:translateY(-12px);
+
+box-shadow:0 0 40px rgba(255,102,0,.4);
+
+}
+
+
+
+.stat-number{
+
+font-size:55px;
+
+font-weight:900;
+
+color:#ff6600;
+
+}
+
+
+
+.stat-text{
+
+font-size:20px;
+
+color:#ddd;
+
+margin-top:15px;
+
+}
+
+
+
+
+/* پس زمینه خطوط گیمینگ */
+
+
+.gaming-bg{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+overflow:hidden;
+
+z-index:-1;
+
+}
+
+
+
+.line{
+
+position:absolute;
+
+height:2px;
+
+width:200px;
+
+background:#ff6600;
+
+opacity:.3;
+
+animation:moveLine 5s infinite linear;
+
+}
+
+
+
+@keyframes moveLine{
+
+
+from{
+
+transform:translateX(-300px);
+
+}
+
+
+to{
+
+transform:translateX(1200px);
+
+}
+
+
+}
+
+
+
+
+</style>
+
+
+
+
+<section class="stats">
+
+
+
+<div class="stat-box">
+
+
+<div class="stat-number">
+
+63K+
+
+</div>
+
+
+<div class="stat-text">
+
+فالوور
+
+</div>
+
+
+</div>
+
+
+
+<div class="stat-box">
+
+
+<div class="stat-number">
+
+🎮
+
+</div>
+
+
+<div class="stat-text">
+
+Gaming Creator
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="stat-box">
+
+
+<div class="stat-number">
+
+🔥
+
+</div>
+
+
+<div class="stat-text">
+
+Amir Gamer Brand
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="stat-box">
+
+
+<div class="stat-number">
+
+24/7
+
+</div>
+
+
+<div class="stat-text">
+
+Gaming Life
+
+</div>
+
+
+</div>
+
+
+
+</section>
+
+
+
+<div class="gaming-bg">
+
+<div class="line" style="top:20%"></div>
+
+<div class="line" style="top:40%;animation-delay:1s"></div>
+
+<div class="line" style="top:60%;animation-delay:2s"></div>
+
+<div class="line" style="top:80%;animation-delay:3s"></div>
+
+</div><!-- PART 6 -->
+
+
+<style>
+
+
+/* Loading Screen */
+
+
+.loader{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:#050505;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:9999;
+
+animation:hideLoader 3s forwards;
+
+}
+
+
+
+.loader h1{
+
+font-size:60px;
+
+color:#ff6600;
+
+text-shadow:
+
+0 0 20px #ff6600,
+
+0 0 50px #ff6600;
+
+animation:pulse 1s infinite;
+
+}
+
+
+
+@keyframes pulse{
+
+50%{
+
+transform:scale(1.1);
+
+}
+
+}
+
+
+
+@keyframes hideLoader{
+
+0%,80%{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+
+100%{
+
+opacity:0;
+
+visibility:hidden;
+
+}
+
+}
+
+
+
+
+
+/* Gallery */
+
+
+.gallery{
+
+padding:100px 8%;
+
+}
+
+
+
+.gallery-title{
+
+text-align:center;
+
+font-size:50px;
+
+color:#ff6600;
+
+margin-bottom:50px;
+
+}
+
+
+
+.gallery-grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+}
+
+
+
+.gallery-item{
+
+height:250px;
+
+background:#111;
+
+border-radius:25px;
+
+overflow:hidden;
+
+border:2px solid transparent;
+
+transition:.4s;
+
+}
+
+
+
+.gallery-item:hover{
+
+border-color:#ff6600;
+
+box-shadow:0 0 35px #ff6600;
+
+transform:scale(1.05);
+
+}
+
+
+
+.gallery-item img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+
+
+
+/* RGB Border */
+
+
+.rgb-box{
+
+margin:80px auto;
+
+max-width:900px;
+
+padding:40px;
+
+border-radius:30px;
+
+background:#111;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+
+.rgb-box::before{
+
+content:"";
+
+position:absolute;
+
+inset:-5px;
+
+background:linear-gradient(
+
+45deg,
+
+#ff0000,
+
+#ff9900,
+
+#ffff00,
+
+#ff0000
+
+);
+
+z-index:-1;
+
+filter:blur(20px);
+
+animation:rgb 4s linear infinite;
+
+}
+
+
+
+@keyframes rgb{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+
+
+.rgb-box h2{
+
+text-align:center;
+
+font-size:35px;
+
+color:#ff6600;
+
+}
+
+
+
+.rgb-box p{
+
+text-align:center;
+
+font-size:20px;
+
+line-height:40px;
+
+color:#ddd;
+
+}
+
+
+
+</style>
+
+
+
+<div class="loader">
+
+<h1>
+
+AMIR GAMER 🎮
+
+</h1>
+
+</div>
+
+
+
+
+<section class="gallery">
+
+
+<h2 class="gallery-title">
+
+Gaming Gallery
+
+</h2>
+
+
+
+<div class="gallery-grid">
+
+
+<div class="gallery-item">
+
+<img src="img1.jpg">
+
+</div>
+
+
+
+<div class="gallery-item">
+
+<img src="img2.jpg">
+
+</div>
+
+
+
+<div class="gallery-item">
+
+<img src="img3.jpg">
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+<div class="rgb-box">
+
+
+<h2>
+
+Welcome To My Gaming World 🔥
+
+</h2>
+
+
+<p>
+
+اینجا سایت رسمی Amir Gamer است
+
+<br>
+
+با من همراه باش برای محتوای گیمینگ بیشتر
+
+</p>
+
+
+</div><!-- PART 7 -->
+
+
+<style>
+
+
+.profile-section{
+
+padding:100px 8%;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+
+
+.profile-card{
+
+max-width:900px;
+
+width:100%;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,102,0,.4);
+
+border-radius:35px;
+
+padding:50px;
+
+text-align:center;
+
+backdrop-filter:blur(20px);
+
+box-shadow:0 0 40px rgba(255,102,0,.15);
+
+}
+
+
+
+.profile-card h2{
+
+font-size:45px;
+
+color:#ff6600;
+
+margin-bottom:25px;
+
+}
+
+
+
+.profile-card p{
+
+font-size:21px;
+
+color:#ddd;
+
+line-height:45px;
+
+}
+
+
+
+
+.badges{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+margin-top:40px;
+
+}
+
+
+
+.badge{
+
+padding:15px 30px;
+
+border-radius:20px;
+
+background:#111;
+
+border:1px solid #ff6600;
+
+color:#fff;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+
+
+.badge:hover{
+
+background:#ff6600;
+
+transform:translateY(-8px);
+
+}
+
+
+
+
+
+.typing{
+
+margin-top:30px;
+
+font-size:30px;
+
+color:white;
+
+}
+
+
+
+.cursor{
+
+color:#ff6600;
+
+animation:blink 1s infinite;
+
+}
+
+
+
+@keyframes blink{
+
+50%{
+
+opacity:0;
+
+}
+
+}
+
+
+
+</style>
+
+
+
+
+<section class="profile-section">
+
+
+<div class="profile-card">
+
+
+<h2>
+
+🎮 Amir Gamer
+
+</h2>
+
+
+
+<p>
+
+استریمر و کریتور گیمینگ
+
+<br>
+
+ساخت محتوا برای گیمرها و عاشقان بازی
+
+<br>
+
+هدف من ساخت یک کامیونیتی بزرگ و خفن است 🔥
+
+</p>
+
+
+
+<div class="badges">
+
+
+<div class="badge">
+
+🏆 63K Followers
+
+</div>
+
+
+<div class="badge">
+
+🎮 Gamer
+
+</div>
+
+
+<div class="badge">
+
+🔥 Creator
+
+</div>
+
+
+<div class="badge">
+
+⭐ Official
+
+</div>
+
+
+</div>
+
+
+
+<div class="typing">
+
+AMIR GAMER
+
+<span class="cursor">|</span>
+
+</div>
+
+
+</div>
+
+
+</section><!-- PART 8 -->
+
+
+<style>
+
+
+.mobile-menu{
+
+display:none;
+
+font-size:30px;
+
+color:#ff6600;
+
+cursor:pointer;
+
+}
+
+
+
+.social-buttons{
+
+padding:80px 8%;
+
+text-align:center;
+
+}
+
+
+
+.social-buttons h2{
+
+font-size:45px;
+
+color:#ff6600;
+
+margin-bottom:40px;
+
+}
+
+
+
+.social-list{
+
+display:flex;
+
+justify-content:center;
+
+gap:25px;
+
+flex-wrap:wrap;
+
+}
+
+
+
+.social-btn{
+
+min-width:220px;
+
+padding:20px;
+
+border-radius:20px;
+
+background:#111;
+
+border:2px solid #ff6600;
+
+color:white;
+
+text-decoration:none;
+
+font-size:20px;
+
+font-weight:bold;
+
+transition:.4s;
+
+}
+
+
+
+.social-btn:hover{
+
+background:#ff6600;
+
+box-shadow:0 0 35px #ff6600;
+
+transform:translateY(-10px);
+
+}
+
+
+
+
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(50px);
+
+transition:1s;
+
+}
+
+
+
+.reveal.active{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+
+
+
+@media(max-width:800px){
+
+
+.mobile-menu{
+
+display:block;
+
+}
+
+
+
+nav{
+
+display:none;
+
+position:absolute;
+
+top:80px;
+
+right:20px;
+
+background:#111;
+
+padding:25px;
+
+border-radius:20px;
+
+}
+
+
+
+nav a{
+
+display:block;
+
+margin:15px;
+
+}
+
+
+
+}
+
+
+
+
+</style>
+
+
+
+
+<section class="social-buttons reveal">
+
+
+<h2>
+
+ارتباط مستقیم
+
+</h2>
+
+
+
+<div class="social-list">
+
+
+<a class="social-btn"
+href="https://www.aparat.com/Amirgamer_DVAmir23">
+
+📺 آپارات
+
+</a>
+
+
+
+<a class="social-btn">
+
+💬 ایتا
+
+<br>
+
+@Zafii_05
+
+</a>
+
+
+
+<a class="social-btn">
+
+💬 بله
+
+<br>
+
+@zafii_05
+
+</a>
+
+
+
+<a class="social-btn">
+
+🎧 Discord
+
+<br>
+
+Amirgamer0219
+
+</a>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+<script>
+
+
+window.addEventListener("scroll",()=>{
+
+
+let items=document.querySelectorAll(".reveal");
+
+
+items.forEach(item=>{
+
+
+let top=item.getBoundingClientRect().top;
+
+
+if(top < window.innerHeight-100){
+
+item.classList.add("active");
+
+}
+
+
+});
+
+
+});
+
+
+</script><!-- PART 9 -->
+
+
+<style>
+
+
+/* نور دنبال کننده موس */
+
+
+.mouse-light{
+
+position:fixed;
+
+width:250px;
+
+height:250px;
+
+background:#ff6600;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+opacity:.35;
+
+pointer-events:none;
+
+z-index:999;
+
+}
+
+
+
+
+.contact{
+
+padding:100px 8%;
+
+text-align:center;
+
+}
+
+
+
+.contact h2{
+
+font-size:50px;
+
+color:#ff6600;
+
+margin-bottom:40px;
+
+}
+
+
+
+.contact-box{
+
+max-width:700px;
+
+margin:auto;
+
+background:rgba(255,255,255,.05);
+
+padding:45px;
+
+border-radius:30px;
+
+border:1px solid rgba(255,102,0,.3);
+
+backdrop-filter:blur(15px);
+
+}
+
+
+
+.contact-box p{
+
+font-size:22px;
+
+line-height:50px;
+
+color:#ddd;
+
+}
+
+
+
+.contact-btn{
+
+display:inline-block;
+
+margin-top:30px;
+
+padding:18px 40px;
+
+background:#ff6600;
+
+color:white;
+
+border-radius:20px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+
+
+.contact-btn:hover{
+
+transform:scale(1.1);
+
+box-shadow:0 0 40px #ff6600;
+
+}
+
+
+
+/* افکت دکمه ها */
+
+
+a{
+
+transition:.3s;
+
+}
+
+
+
+</style>
+
+
+
+
+<div class="mouse-light"></div>
+
+
+
+<section class="contact">
+
+
+
+<h2>
+
+تماس با Amir Gamer
+
+</h2>
+
+
+
+<div class="contact-box">
+
+
+<p>
+
+برای همکاری و ارتباط با من:
+
+<br>
+
+🎧 Discord : Amirgamer0219
+
+<br>
+
+💬 Eitaa : @Zafii_05
+
+<br>
+
+💬 Bale : @zafii_05
+
+</p>
+
+
+
+<a class="contact-btn"
+href="https://www.aparat.com/Amirgamer_DVAmir23">
+
+رفتن به کانال آپارات
+
+</a>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+<script>
+
+
+const light=document.querySelector(".mouse-light");
+
+
+document.addEventListener("mousemove",(e)=>{
+
+
+light.style.left=e.clientX-125+"px";
+
+light.style.top=e.clientY-125+"px";
+
+
+});
+
+
+</script><!-- PART 10 -->
+
+
+<style>
+
+
+/* لوگوی متحرک */
+
+
+.logo{
+
+animation:logoGlow 2s infinite alternate;
+
+}
+
+
+@keyframes logoGlow{
+
+from{
+
+text-shadow:0 0 10px #ff6600;
+
+}
+
+
+to{
+
+text-shadow:
+
+0 0 30px #ff6600,
+
+0 0 60px #ff9900;
+
+}
+
+}
+
+
+
+/* ذرات پس زمینه */
+
+
+.particle{
+
+position:fixed;
+
+width:6px;
+
+height:6px;
+
+background:#ff6600;
+
+border-radius:50%;
+
+opacity:.7;
+
+z-index:-1;
+
+animation:moveParticle 8s infinite linear;
+
+}
+
+
+
+@keyframes moveParticle{
+
+
+from{
+
+transform:translateY(100vh);
+
+opacity:0;
+
+}
+
+
+20%{
+
+opacity:1;
+
+}
+
+
+to{
+
+transform:translateY(-100vh);
+
+opacity:0;
+
+}
+
+
+}
+
+
+
+
+
+/* پایان حرفه ای */
+
+
+.final-box{
+
+margin:100px 8%;
+
+padding:50px;
+
+text-align:center;
+
+border-radius:35px;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+rgba(255,102,0,.15),
+
+rgba(255,255,255,.03)
+
+);
+
+border:1px solid #ff6600;
+
+}
+
+
+
+.final-box h2{
+
+font-size:45px;
+
+color:#ff6600;
+
+}
+
+
+
+.final-box p{
+
+font-size:22px;
+
+line-height:45px;
+
+color:#ddd;
+
+margin-top:20px;
+
+}
+
+
+
+</style>
+
+
+
+
+<div class="particle" style="left:10%;animation-delay:1s;"></div>
+
+<div class="particle" style="left:30%;animation-delay:3s;"></div>
+
+<div class="particle" style="left:50%;animation-delay:5s;"></div>
+
+<div class="particle" style="left:70%;animation-delay:2s;"></div>
+
+<div class="particle" style="left:90%;animation-delay:4s;"></div>
+
+
+
+
+
+<div class="final-box">
+
+
+<h2>
+
+Welcome To Amir Gamer World 🎮🔥
+
+</h2>
+
+
+<p>
+
+مرجع رسمی Amir Gamer
+
+<br>
+
+گیم، محتوا و کامیونیتی بزرگ گیمرها
+
+</p>
+
+
+</div>
