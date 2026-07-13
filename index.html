@@ -1,203 +1,416 @@
 <!DOCTYPE html>
-<html>
+<html lang="fa" dir="rtl">
+
 <head>
-<title>Amir-gamer</title>
-<style>
-body {
-  background:#111;
-  color:white;
-  font-family:Arial;
-  text-align:center;
-}
-h1 {
-  color:#00ff88;
-  font-size:50px;
-}
-.box {
-  background:#222;
-  padding:20px;
-  margin:20px;
-  border-radius:15px;
-}
-button {
-  background:#00ff88;
-  border:0;
-  padding:15px 30px;
-  border-radius:10px;
-  font-size:18px;
-}
-</style>
-</head>
 
-<body>
+<meta charset="UTF-8">
 
-<h1>Amir-gamer 🎮</h1>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div class="box">
-<h2>به سایت من خوش آمدید</h2>
-<p>اینجا قراره سایت گیمینگ من ساخته بشه.</p>
-<button>شروع بازی</button>
-</div>
+<title>Amir Gamer</title>
 
-</body>
-</html>
-<!DOCTYPE html>
-<html>
-<head>
-<title>Amir-gamer 🚗</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700;900&display=swap" rel="stylesheet">
 
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Vazirmatn',sans-serif;
+scroll-behavior:smooth;
+}
+
 body{
-  margin:0;
-  background:#111;
-  color:white;
-  text-align:center;
-  font-family:Arial;
+background:#090909;
+color:#fff;
+overflow-x:hidden;
 }
 
-h1{
- color:#00ff88;
+body::before{
+content:'';
+position:fixed;
+width:500px;
+height:500px;
+background:#ff7b00;
+filter:blur(220px);
+left:-200px;
+top:-200px;
+opacity:.25;
+z-index:-1;
 }
 
-#game{
- width:300px;
- height:500px;
- background:#333;
- margin:auto;
- position:relative;
- overflow:hidden;
- border:3px solid #00ff88;
+body::after{
+content:'';
+position:fixed;
+width:500px;
+height:500px;
+background:#ff9d00;
+filter:blur(220px);
+right:-200px;
+bottom:-200px;
+opacity:.25;
+z-index:-1;
 }
 
-#car{
- width:50px;
- height:80px;
- background:red;
- position:absolute;
- bottom:20px;
- left:125px;
- border-radius:10px;
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+background:rgba(0,0,0,.65);
+backdrop-filter:blur(15px);
+z-index:999;
 }
 
-.enemy{
- width:50px;
- height:80px;
- background:yellow;
- position:absolute;
- top:-100px;
- border-radius:10px;
+.logo{
+font-size:35px;
+font-weight:900;
+color:#ff8800;
+letter-spacing:2px;
 }
 
-button{
- margin:10px;
- padding:15px;
- background:#00ff88;
- border:0;
- border-radius:10px;
- font-size:20px;
+nav{
+display:flex;
+gap:30px;
 }
+
+nav a{
+color:#fff;
+text-decoration:none;
+font-size:18px;
+transition:.3s;
+}
+
+nav a:hover{
+color:#ff8800;
+}
+
+.hero{
+
+padding:170px 10% 120px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:60px;
+
+}
+
+.left{
+
+flex:1;
+
+}
+
+.left h1{
+
+font-size:70px;
+
+font-weight:900;
+
+line-height:90px;
+
+}
+
+.left h1 span{
+
+color:#ff8800;
+
+}
+
+.left p{
+
+margin-top:25px;
+
+font-size:20px;
+
+line-height:40px;
+
+color:#ccc;
+
+}
+
+.btn{
+
+display:inline-block;
+
+margin-top:35px;
+
+padding:16px 35px;
+
+background:#ff8800;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:15px;
+
+font-size:18px;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+.btn:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 0 30px orange;
+
+}
+
+.right{
+
+flex:1;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.right img{
+
+width:420px;
+
+border-radius:25px;
+
+box-shadow:0 0 40px rgba(255,136,0,.45);
+
+animation:float 5s infinite ease-in-out;
+
+}
+
+@keyframes float{
+
+0%{transform:translateY(0);}
+
+50%{transform:translateY(-18px);}
+
+100%{transform:translateY(0);}
+
+}
+
+section{
+
+padding:120px 10%;
+
+}
+
+.title{
+
+font-size:45px;
+
+text-align:center;
+
+color:#ff8800;
+
+margin-bottom:50px;
+
+}
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+
+}.card{
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(15px);
+
+padding:35px;
+
+border-radius:20px;
+
+text-align:center;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+border-color:#ff8800;
+
+box-shadow:0 0 35px rgba(255,136,0,.45);
+
+}
+
+.card h3{
+
+font-size:28px;
+
+margin-bottom:15px;
+
+color:#ff8800;
+
+}
+
+.card p{
+
+color:#ccc;
+
+line-height:35px;
+
+}
+
+.social{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:20px;
+
+margin-top:50px;
+
+}
+
+.social a{
+
+padding:15px 30px;
+
+background:#ff8800;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:15px;
+
+transition:.3s;
+
+font-weight:bold;
+
+}
+
+.social a:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 0 25px orange;
+
+}
+
+footer{
+
+padding:40px;
+
+text-align:center;
+
+color:#999;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+margin-top:60px;
+
+}
+
+@media(max-width:900px){
+
+.hero{
+
+flex-direction:column-reverse;
+
+text-align:center;
+
+}
+
+.left h1{
+
+font-size:50px;
+
+line-height:65px;
+
+}
+
+.right img{
+
+width:300px;
+
+}
+
+nav{
+
+display:none;
+
+}
+
+}
+
 </style>
 
 </head>
 
 <body>
 
-<h1>Amir-gamer 🚗</h1>
+<header>
 
-<div id="game">
-<div id="car"></div>
+<div class="logo">AMIR GAMER</div>
+
+<nav>
+
+<a href="#about">درباره من</a>
+
+<a href="#social">شبکه‌های اجتماعی</a>
+
+<a href="#contact">ارتباط</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="left">
+
+<h1>
+
+سلام، من <span>Amir Gamer</span> هستم
+
+</h1>
+
+<p>
+
+به وب‌سایت رسمی من خوش اومدی.
+اینجا می‌تونی راه‌های ارتباط با من و صفحه آپاراتم رو ببینی.
+
+</p>
+
+<a class="btn" href="https://www.aparat.com/Amirgamer_DVAmir23">
+
+آپارات من
+
+</a>
+
 </div>
 
-<h2 id="score">امتیاز: 0</h2>
+<div class="right">
 
-<button onclick="left()">⬅️</button>
-<button onclick="right()">➡️</button>
+<img src="hero.jpg">
 
+</div>
 
-<script>
-
-let car=document.getElementById("car");
-let game=document.getElementById("game");
-let scoreText=document.getElementById("score");
-
-let x=125;
-let score=0;
-
-
-function left(){
- if(x>0){
- x-=25;
- car.style.left=x+"px";
- }
-}
-
-
-function right(){
- if(x<250){
- x+=25;
- car.style.left=x+"px";
- }
-}
-
-
-function enemy(){
-
-let e=document.createElement("div");
-e.className="enemy";
-
-e.style.left=Math.floor(Math.random()*6)*50+"px";
-
-game.appendChild(e);
-
-let y=-100;
-
-let move=setInterval(()=>{
-
-y+=5;
-e.style.top=y+"px";
-
-
-if(y>500){
- e.remove();
- clearInterval(move);
- score++;
- scoreText.innerHTML="امتیاز: "+score;
-}
-
-
-let a=car.getBoundingClientRect();
-let b=e.getBoundingClientRect();
-
-
-if(
-a.left<b.right &&
-a.right>b.left &&
-a.top<b.bottom &&
-a.bottom>b.top
-){
-alert("باختی 😅 امتیاز: "+score);
-location.reload();
-}
-
-
-},20);
-
-}
-
-
-setInterval(enemy,1500);
-
-
-document.addEventListener("keydown",e=>{
-
-if(e.key=="ArrowLeft") left();
-
-if(e.key=="ArrowRight") right();
-
-});
-
-
-</script>
-
-</body>
-</html>
+</section> 
