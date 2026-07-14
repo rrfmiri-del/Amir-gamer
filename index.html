@@ -6,8 +6,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Amir Gamer</title>
+<title>AMIR GAMER</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700;900&display=swap" rel="stylesheet">
 
 <style>
 
@@ -15,483 +16,1683 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:tahoma,Arial;
+font-family:'Vazirmatn',sans-serif;
+scroll-behavior:smooth;
 }
-
 
 body{
 
-background:#070707;
-
+background:#050505;
 color:white;
-
 overflow-x:hidden;
 
 }
 
+body::before{
 
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at 20% 20%,rgba(0,255,170,.15),transparent 30%),
+radial-gradient(circle at 80% 30%,rgba(255,120,0,.15),transparent 30%),
+radial-gradient(circle at 50% 80%,rgba(0,170,255,.15),transparent 30%);
+z-index:-1;
 
-/* هدر */
+}
 
 header{
 
-position:fixed;
-
-top:0;
-
-width:100%;
-
-padding:20px 8%;
-
+height:100vh;
 display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-background:rgba(0,0,0,.7);
-
-backdrop-filter:blur(15px);
-
-border-bottom:1px solid #ff6600;
-
-}
-
-
-
-.logo{
-
-font-size:35px;
-
-font-weight:900;
-
-color:#ff6600;
-
-}
-
-
-
-
-nav a{
-
-color:white;
-
-text-decoration:none;
-
-margin:0 15px;
-
-}
-
-
-
-nav a:hover{
-
-color:#ff6600;
-
-}
-
-
-
-/* صفحه اصلی */
-
-
-.hero{
-
-min-height:100vh;
-
-display:flex;
-
-align-items:center;
-
 justify-content:center;
-
-padding:120px 8%;
-
+align-items:center;
 text-align:center;
+padding:20px;
 
 }
-
-
 
 .hero h1{
 
-font-size:80px;
-
-font-weight:900;
-
-}
-
-
-
-.hero span{
-
-color:#ff6600;
+font-size:75px;
+color:#00ff88;
+text-shadow:0 0 25px #00ff88;
 
 }
-
-
 
 .hero p{
 
 margin-top:25px;
-
-font-size:22px;
-
-line-height:45px;
-
-color:#ccc;
+font-size:24px;
+color:#ddd;
 
 }
-
-
 
 .btn{
 
 display:inline-block;
-
-margin-top:35px;
-
-padding:15px 40px;
-
-background:#ff6600;
-
-color:white;
-
+margin-top:40px;
+padding:18px 45px;
+background:#00ff88;
+color:#000;
 text-decoration:none;
-
+font-size:22px;
+font-weight:bold;
 border-radius:15px;
-
-box-shadow:0 0 25px #ff6600;
+transition:.4s;
 
 }
 
+.btn:hover{
 
+transform:scale(1.1);
+box-shadow:0 0 35px #00ff88;
+
+}
 
 </style>
 
 </head>
 
-
-
 <body>
-
-
 
 <header>
 
+<div class="hero">
 
-<div class="logo">
-
-AMIR GAMER
-
-</div>
-
-
-
-<nav>
-
-<a href="#">خانه</a>
-
-<a href="#">درباره</a>
-
-<a href="#">ارتباط</a>
-
-</nav>
-
-
-
-</header>
-
-
-
-
-<section class="hero">
-
-
-<div>
-
-
-<h1>
-
-AMIR
-
-<span>
-
-GAMER
-
-</span>
-
-</h1>
-
+<h1>AMIR GAMER 🎮</h1>
 
 <p>
 
-استریمر و تولید کننده محتوای گیمینگ 🎮
-
-<br>
-
-به سایت رسمی Amir Gamer خوش آمدید
+به دنیای حرفه‌ای گیمینگ خوش اومدی...
 
 </p>
 
-
-
-<a class="btn" href="#">
+<a href="#about" class="btn">
 
 شروع
 
 </a>
 
-
 </div>
 
+</header>
 
-</section><!-- PART 2 -->
+</body>
 
+</html><!-- ===== PART 2 ===== -->
 
 <style>
 
+nav{
 
-.about{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.75);
+backdrop-filter:blur(12px);
+z-index:1000;
+border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.logo{
+
+font-size:30px;
+font-weight:900;
+color:#00ff88;
+letter-spacing:2px;
+
+}
+
+nav ul{
+
+display:flex;
+list-style:none;
+gap:25px;
+
+}
+
+nav ul li a{
+
+color:white;
+text-decoration:none;
+font-size:18px;
+transition:.3s;
+
+}
+
+nav ul li a:hover{
+
+color:#00ff88;
+
+}
+
+section{
 
 padding:100px 8%;
 
-text-align:center;
-
 }
-
-
 
 .title{
 
-font-size:50px;
-
-color:#ff6600;
-
-margin-bottom:40px;
+font-size:45px;
+color:#00ff88;
+text-align:center;
+margin-bottom:50px;
 
 }
 
+.about{
 
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
 
-.about-box{
+}
 
-max-width:900px;
-
-margin:auto;
-
-padding:45px;
+.about-card{
 
 background:rgba(255,255,255,.05);
-
-border:1px solid rgba(255,102,0,.4);
-
-border-radius:30px;
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(10px);
+padding:35px;
+border-radius:20px;
+transition:.4s;
 
 }
 
+.about-card:hover{
 
+transform:translateY(-10px);
+box-shadow:0 0 25px rgba(0,255,136,.4);
 
-.about-box p{
+}
 
-font-size:22px;
+.about-card h3{
 
+font-size:28px;
+margin-bottom:20px;
+color:#00ff88;
+
+}
+
+.about-card p{
+
+line-height:2;
 color:#ddd;
 
-line-height:45px;
+}
+
+</style>
+
+<nav>
+
+<div class="logo">
+
+AMIR
+
+</div>
+
+<ul>
+
+<li><a href="#">خانه</a></li>
+
+<li><a href="#about">درباره</a></li>
+
+<li><a href="#skills">مهارت‌ها</a></li>
+
+<li><a href="#contact">ارتباط</a></li>
+
+</ul>
+
+</nav>
+
+<section id="about">
+
+<h2 class="title">
+
+درباره من
+
+</h2>
+
+<div class="about">
+
+<div class="about-card">
+
+<h3>🎮 گیمر</h3>
+
+<p>
+
+من عاشق دنیای بازی‌های ویدیویی هستم و همیشه در حال ساخت محتوا و تجربه بازی‌های جدیدم.
+
+</p>
+
+</div>
+
+<div class="about-card">
+
+<h3>💻 برنامه‌نویسی</h3>
+
+<p>
+
+در کنار گیم، به طراحی سایت و ساخت پروژه‌های جذاب علاقه دارم و این سایت یکی از پروژه‌های منه.
+
+</p>
+
+</div>
+
+<div class="about-card">
+
+<h3>🚀 هدف</h3>
+
+<p>
+
+هدفم ساخت یک جامعه گیمینگ حرفه‌ای و انتشار آموزش‌ها، پروژه‌ها و محتوای باکیفیته.
+
+</p>
+
+</div>
+
+</div>
+
+</section><!-- ===== PART 3 ===== -->
+
+<style>
+
+#skills{
+padding:100px 8%;
+}
+
+.skills-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 
 }
 
+.skill-card{
 
+background:rgba(255,255,255,.05);
+border:1px solid rgba(0,255,136,.2);
+padding:30px;
+border-radius:20px;
+transition:.4s;
 
+}
 
-.cards{
+.skill-card:hover{
 
-padding:50px 8%;
+transform:translateY(-10px);
+box-shadow:0 0 30px rgba(0,255,136,.5);
+
+}
+
+.skill-card h3{
+
+color:#00ff88;
+margin-bottom:20px;
+
+}
+
+.bar{
+
+width:100%;
+height:12px;
+background:#222;
+border-radius:20px;
+overflow:hidden;
+margin-top:10px;
+
+}
+
+.fill{
+
+height:100%;
+background:linear-gradient(90deg,#00ff88,#00ccff);
+border-radius:20px;
+
+}
+
+.stats{
+
+margin-top:70px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:25px;
+
+}
+
+.stat{
+
+background:#111;
+padding:35px;
+border-radius:20px;
+text-align:center;
+border:1px solid rgba(255,255,255,.08);
+transition:.4s;
+
+}
+
+.stat:hover{
+
+transform:scale(1.05);
+
+}
+
+.stat h2{
+
+font-size:45px;
+color:#00ff88;
+
+}
+
+.stat p{
+
+margin-top:10px;
+color:#ccc;
+
+}
+
+</style>
+
+<section id="skills">
+
+<h2 class="title">
+
+مهارت‌ها
+
+</h2>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+
+<h3>HTML</h3>
+
+<div class="bar">
+<div class="fill" style="width:95%;"></div>
+</div>
+
+</div>
+
+<div class="skill-card">
+
+<h3>CSS</h3>
+
+<div class="bar">
+<div class="fill" style="width:90%;"></div>
+</div>
+
+</div>
+
+<div class="skill-card">
+
+<h3>Gaming</h3>
+
+<div class="bar">
+<div class="fill" style="width:100%;"></div>
+</div>
+
+</div>
+
+<div class="skill-card">
+
+<h3>Content Creator</h3>
+
+<div class="bar">
+<div class="fill" style="width:85%;"></div>
+</div>
+
+</div>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+
+<h2>500+</h2>
+
+<p>ساعت بازی</p>
+
+</div>
+
+<div class="stat">
+
+<h2>100+</h2>
+
+<p>پروژه</p>
+
+</div>
+
+<div class="stat">
+
+<h2>50+</h2>
+
+<p>آموزش</p>
+
+</div>
+
+<div class="stat">
+
+<h2>24/7</h2>
+
+<p>فعالیت</p>
+
+</div>
+
+</div>
+
+</section><!-- ===== PART 4 ===== -->
+
+<style>
+
+#projects{
+
+padding:100px 8%;
+
+}
+
+.projects-grid{
 
 display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 
 gap:30px;
 
 }
 
+.project{
 
+background:rgba(255,255,255,.05);
 
-.card{
-
-background:#111;
-
-padding:35px;
+border:1px solid rgba(0,255,136,.2);
 
 border-radius:25px;
 
-text-align:center;
+padding:35px;
 
-border:1px solid #333;
+transition:.4s;
 
-transition:.3s;
-
-}
-
-
-
-.card:hover{
-
-transform:translateY(-10px);
-
-border-color:#ff6600;
-
-box-shadow:0 0 30px #ff6600;
+backdrop-filter:blur(12px);
 
 }
 
+.project:hover{
 
+transform:translateY(-12px);
 
-.card h2{
+box-shadow:0 0 35px rgba(0,255,136,.45);
 
-color:#ff6600;
+border-color:#00ff88;
+
+}
+
+.project h3{
+
+font-size:30px;
+
+color:#00ff88;
 
 margin-bottom:20px;
 
 }
 
+.project p{
 
+color:#ddd;
 
-.card p{
+line-height:2;
 
-color:#ccc;
-
-font-size:18px;
-
-line-height:35px;
+margin-bottom:25px;
 
 }
 
+.project a{
 
+display:inline-block;
+
+padding:12px 28px;
+
+background:#00ff88;
+
+color:#000;
+
+font-weight:bold;
+
+text-decoration:none;
+
+border-radius:12px;
+
+transition:.3s;
+
+}
+
+.project a:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 0 25px #00ff88;
+
+}
 
 </style>
 
-
-
-<section class="about">
-
+<section id="projects">
 
 <h2 class="title">
 
-درباره Amir Gamer
+پروژه‌های من
 
 </h2>
 
+<div class="projects-grid">
 
+<div class="project">
 
-<div class="about-box">
-
-
-<p>
-
-من Amir Gamer هستم 🎮
-
-<br>
-
-استریمر و تولید کننده محتوای گیمینگ.
-
-<br>
-
-این سایت برای معرفی فعالیت‌ها و ارتباط با گیمرها ساخته شده.
-
-<br>
-
-با من همراه باشید برای محتوای بیشتر 🔥
-
-</p>
-
-
-</div>
-
-
-</section>
-
-
-
-
-<section class="cards">
-
-
-<div class="card">
-
-<h2>
-
-🎮 Gaming
-
-</h2>
+<h3>🎮 Gaming Website</h3>
 
 <p>
 
-محتوای گیمینگ و سرگرمی
+سایت رسمی Amir Gamer برای معرفی محتوا، اخبار، شبکه‌های اجتماعی و پروژه‌های گیمینگ.
 
 </p>
 
+<a href="#">مشاهده</a>
+
 </div>
 
+<div class="project">
 
-
-
-<div class="card">
-
-<h2>
-
-🔥 Creator
-
-</h2>
+<h3>🚀 Future Project</h3>
 
 <p>
 
-ساخت محتوا و فعالیت آنلاین
+این قسمت برای پروژه‌های آینده است و بعداً می‌توانی لینک واقعی آن‌ها را قرار بدهی.
 
 </p>
 
+<a href="#">به‌زودی</a>
+
 </div>
 
+<div class="project">
 
-
-
-<div class="card">
-
-<h2>
-
-🏆 Community
-
-</h2>
+<h3>💎 VIP Section</h3>
 
 <p>
 
-کامیونیتی گیمرها
+محل معرفی سرویس‌ها، آموزش‌ها یا هر چیزی که بعداً بخواهی به سایت اضافه کنی.
 
 </p>
 
+<a href="#">اطلاعات بیشتر</a>
+
 </div>
 
+</div>
 
-
-</section><!-- PART 3 -->
-
+</section><!-- ===== PART 5 ===== -->
 
 <style>
 
-
-.social-section{
+#contact{
 
 padding:100px 8%;
+
+}
+
+.contact-box{
+
+max-width:900px;
+
+margin:auto;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(0,255,136,.2);
+
+border-radius:25px;
+
+padding:40px;
+
+backdrop-filter:blur(12px);
+
+}
+
+.contact-box p{
+
+font-size:20px;
+
+color:#ddd;
+
+line-height:2;
+
+text-align:center;
+
+margin-bottom:40px;
+
+}
+
+.socials{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+}
+
+.social{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+height:80px;
+
+border-radius:18px;
+
+text-decoration:none;
+
+font-size:22px;
+
+font-weight:bold;
+
+background:#111;
+
+color:white;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.4s;
+
+}
+
+.social:hover{
+
+background:#00ff88;
+
+color:#000;
+
+transform:translateY(-8px);
+
+box-shadow:0 0 30px rgba(0,255,136,.5);
+
+}
+
+</style>
+
+<section id="contact">
+
+<h2 class="title">
+
+ارتباط با من
+
+</h2>
+
+<div class="contact-box">
+
+<p>
+
+از طریق شبکه‌های اجتماعی زیر می‌توانی با من در ارتباط باشی.
+
+</p>
+
+<div class="socials">
+
+<a class="social" href="#">📺 آپارات</a>
+
+<a class="social" href="#">💬 ایتا</a>
+
+<a class="social" href="#">💙 بله</a>
+
+<a class="social" href="#">🎧 Discord</a>
+
+<a class="social" href="#">▶️ YouTube</a>
+
+<a class="social" href="#">📷 Instagram</a>
+
+</div>
+
+</div>
+
+</section><!-- ===== PART 6 ===== -->
+
+<style>
+
+#why{
+
+padding:100px 8%;
+
+}
+
+.why-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+}
+
+.why-card{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(0,255,136,.2);
+
+border-radius:25px;
+
+padding:35px;
+
+text-align:center;
+
+transition:.4s;
+
+backdrop-filter:blur(12px);
+
+}
+
+.why-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 0 35px rgba(0,255,136,.4);
+
+border-color:#00ff88;
+
+}
+
+.why-card h3{
+
+font-size:30px;
+
+color:#00ff88;
+
+margin-bottom:20px;
+
+}
+
+.why-card p{
+
+font-size:18px;
+
+line-height:2;
+
+color:#ddd;
+
+}
+
+</style>
+
+<section id="why">
+
+<h2 class="title">
+
+چرا AMIR GAMER؟
+
+</h2>
+
+<div class="why-grid">
+
+<div class="why-card">
+
+<h3>🎮 گیمینگ حرفه‌ای</h3>
+
+<p>
+
+محتوای گیمینگ، معرفی بازی‌ها و تجربه‌های جذاب در یک مکان.
+
+</p>
+
+</div>
+
+<div class="why-card">
+
+<h3>🚀 پروژه‌های جدید</h3>
+
+<p>
+
+همیشه پروژه‌ها و ایده‌های جدید در حال توسعه و انتشار هستند.
+
+</p>
+
+</div>
+
+<div class="why-card">
+
+<h3>💬 کامیونیتی</h3>
+
+<p>
+
+محلی برای ارتباط، یادگیری و رشد کنار بقیه گیمرها.
+
+</p>
+
+</div>
+
+</div>
+
+</section><!-- ===== PART 7 ===== -->
+
+<style>
+
+#timeline{
+
+padding:100px 8%;
+
+}
+
+.timeline{
+
+position:relative;
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+.timeline::before{
+
+content:"";
+
+position:absolute;
+
+right:25px;
+
+top:0;
+
+width:4px;
+
+height:100%;
+
+background:#00ff88;
+
+}
+
+.event{
+
+position:relative;
+
+margin:40px 0;
+
+padding:25px 30px;
+
+padding-right:70px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(0,255,136,.2);
+
+border-radius:20px;
+
+backdrop-filter:blur(10px);
+
+transition:.4s;
+
+}
+
+.event:hover{
+
+transform:translateX(-8px);
+
+box-shadow:0 0 25px rgba(0,255,136,.4);
+
+}
+
+.event::before{
+
+content:"";
+
+position:absolute;
+
+right:15px;
+
+top:30px;
+
+width:20px;
+
+height:20px;
+
+border-radius:50%;
+
+background:#00ff88;
+
+box-shadow:0 0 20px #00ff88;
+
+}
+
+.event h3{
+
+color:#00ff88;
+
+margin-bottom:15px;
+
+font-size:26px;
+
+}
+
+.event p{
+
+color:#ddd;
+
+line-height:2;
+
+}
+
+</style>
+
+<section id="timeline">
+
+<h2 class="title">
+
+مسیر پیشرفت
+
+</h2>
+
+<div class="timeline">
+
+<div class="event">
+
+<h3>🚀 شروع فعالیت</h3>
+
+<p>
+
+شروع تولید محتوا و ورود به دنیای گیمینگ.
+
+</p>
+
+</div>
+
+<div class="event">
+
+<h3>🎮 ساخت سایت</h3>
+
+<p>
+
+راه‌اندازی سایت رسمی برای معرفی پروژه‌ها و فعالیت‌ها.
+
+</p>
+
+</div>
+
+<div class="event">
+
+<h3>🏆 هدف آینده</h3>
+
+<p>
+
+گسترش کامیونیتی و تولید محتوای حرفه‌ای‌تر.
+
+</p>
+
+</div>
+
+</div>
+
+</section><!-- ===== PART 5 (NEW) ===== -->
+
+<style>
+
+#faq{
+padding:100px 8%;
+}
+
+.faq-box{
+max-width:900px;
+margin:auto;
+}
+
+.faq-item{
+background:rgba(255,255,255,.05);
+border:1px solid rgba(0,255,136,.2);
+padding:25px;
+margin-bottom:20px;
+border-radius:20px;
+transition:.4s;
+}
+
+.faq-item:hover{
+box-shadow:0 0 25px rgba(0,255,136,.4);
+transform:translateY(-5px);
+}
+
+.faq-item h3{
+color:#00ff88;
+margin-bottom:15px;
+font-size:24px;
+}
+
+.faq-item p{
+color:#ddd;
+line-height:2;
+}
+
+</style>
+
+<section id="faq">
+
+<h2 class="title">
+
+سوالات متداول
+
+</h2>
+
+<div class="faq-box">
+
+<div class="faq-item">
+
+<h3>🎮 این سایت درباره چیست؟</h3>
+
+<p>
+
+این سایت برای معرفی فعالیت‌ها، پروژه‌ها و محتوای گیمینگ Amir Gamer ساخته شده است.
+
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>🚀 آیا پروژه‌های جدید اضافه می‌شوند؟</h3>
+
+<p>
+
+بله، این سایت همیشه به‌روزرسانی می‌شود و پروژه‌های جدید به آن اضافه خواهند شد.
+
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>💬 چگونه ارتباط برقرار کنم؟</h3>
+
+<p>
+
+در بخش ارتباط با من، لینک شبکه‌های اجتماعی و راه‌های تماس قرار می‌گیرد.
+
+</p>
+
+</div>
+
+</div>
+
+</section><!-- ===== PART 8 ===== -->
+
+<style>
+
+#achievements{
+
+padding:100px 8%;
+
+}
+
+.achievement-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:30px;
+
+}
+
+.achievement{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(0,255,136,.2);
+
+border-radius:25px;
+
+padding:35px;
+
+text-align:center;
+
+transition:.4s;
+
+backdrop-filter:blur(12px);
+
+}
+
+.achievement:hover{
+
+transform:translateY(-10px);
+
+border-color:#00ff88;
+
+box-shadow:0 0 35px rgba(0,255,136,.45);
+
+}
+
+.achievement .icon{
+
+font-size:55px;
+
+margin-bottom:20px;
+
+}
+
+.achievement h3{
+
+color:#00ff88;
+
+margin-bottom:15px;
+
+font-size:28px;
+
+}
+
+.achievement p{
+
+color:#ddd;
+
+line-height:2;
+
+}
+
+</style>
+
+<section id="achievements">
+
+<h2 class="title">
+
+🏆 دستاوردها
+
+</h2>
+
+<div class="achievement-grid">
+
+<div class="achievement">
+
+<div class="icon">🎮</div>
+
+<h3>گیمر حرفه‌ای</h3>
+
+<p>
+
+تولید محتوای گیمینگ و معرفی بازی‌های مختلف.
+
+</p>
+
+</div>
+
+<div class="achievement">
+
+<div class="icon">💻</div>
+
+<h3>طراحی سایت</h3>
+
+<p>
+
+ساخت و توسعه وب‌سایت‌های مدرن و حرفه‌ای.
+
+</p>
+
+</div>
+
+<div class="achievement">
+
+<div class="icon">🚀</div>
+
+<h3>پروژه‌های آینده</h3>
+
+<p>
+
+همیشه در حال یادگیری و ساخت پروژه‌های جدید.
+
+</p>
+
+</div>
+
+</div>
+
+</section><!-- ===== PART 9 ===== -->
+
+<style>
+
+#services{
+
+padding:100px 8%;
+
+}
+
+.services-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+}
+
+.service{
+
+background:linear-gradient(145deg,#101010,#181818);
+
+border:1px solid rgba(0,255,136,.2);
+
+border-radius:25px;
+
+padding:35px;
+
+transition:.4s;
 
 text-align:center;
 
 }
 
+.service:hover{
 
+transform:translateY(-12px);
 
-.social-grid{
+box-shadow:0 0 35px rgba(0,255,136,.45);
+
+border-color:#00ff88;
+
+}
+
+.service .icon{
+
+font-size:60px;
+
+margin-bottom:20px;
+
+}
+
+.service h3{
+
+font-size:28px;
+
+color:#00ff88;
+
+margin-bottom:20px;
+
+}
+
+.service p{
+
+font-size:18px;
+
+line-height:2;
+
+color:#ccc;
+
+}
+
+</style>
+
+<section id="services">
+
+<h2 class="title">
+
+✨ خدمات
+
+</h2>
+
+<div class="services-grid">
+
+<div class="service">
+
+<div class="icon">🎮</div>
+
+<h3>
+
+گیمینگ
+
+</h3>
+
+<p>
+
+معرفی بازی‌ها، آموزش، بررسی و محتوای حرفه‌ای گیمینگ.
+
+</p>
+
+</div>
+
+<div class="service">
+
+<div class="icon">💻</div>
+
+<h3>
+
+طراحی سایت
+
+</h3>
+
+<p>
+
+ساخت وب‌سایت‌های مدرن، سریع و با طراحی حرفه‌ای.
+
+</p>
+
+</div>
+
+<div class="service">
+
+<div class="icon">🚀</div>
+
+<h3>
+
+پروژه‌های اختصاصی
+
+</h3>
+
+<p>
+
+ساخت پروژه‌های شخصی، توسعه ایده‌ها و طراحی اختصاصی.
+
+</p>
+
+</div>
+
+</div>
+
+</section><!-- ===== PART 10 ===== -->
+
+<style>
+
+#vision{
+
+padding:120px 8%;
+
+}
+
+.vision-box{
+
+max-width:1000px;
+
+margin:auto;
+
+padding:60px;
+
+border-radius:30px;
+
+background:linear-gradient(135deg,#111,#1b1b1b);
+
+border:1px solid rgba(0,255,136,.3);
+
+box-shadow:0 0 40px rgba(0,255,136,.15);
+
+text-align:center;
+
+transition:.5s;
+
+}
+
+.vision-box:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 0 50px rgba(0,255,136,.4);
+
+}
+
+.vision-box h2{
+
+font-size:50px;
+
+color:#00ff88;
+
+margin-bottom:25px;
+
+}
+
+.vision-box p{
+
+font-size:20px;
+
+line-height:2.2;
+
+color:#ddd;
+
+max-width:800px;
+
+margin:auto;
+
+}
+
+.vision-btn{
+
+display:inline-block;
+
+margin-top:40px;
+
+padding:16px 40px;
+
+background:#00ff88;
+
+color:#000;
+
+font-weight:bold;
+
+text-decoration:none;
+
+border-radius:15px;
+
+transition:.4s;
+
+}
+
+.vision-btn:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 0 30px #00ff88;
+
+}
+
+</style>
+
+<section id="vision">
+
+<div class="vision-box">
+
+<h2>
+
+🚀 آینده از اینجا شروع می‌شود
+
+</h2>
+
+<p>
+
+هدف من فقط ساخت محتوا نیست؛
+می‌خواهم یک جامعه حرفه‌ای از گیمرها و علاقه‌مندان به تکنولوژی بسازم، جایی که بتوانیم تجربه‌ها، آموزش‌ها و پروژه‌های جدید را با هم به اشتراک بگذاریم.
+
+</p>
+
+<a href="#about" class="vision-btn">
+
+شروع ماجراجویی
+
+</a>
+
+</div>
+
+</section><!-- ===== PART 11 ===== -->
+
+<style>
+
+#reviews{
+
+padding:100px 8%;
+
+}
+
+.review-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:30px;
+
+}
+
+.review{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(0,255,136,.2);
+
+border-radius:25px;
+
+padding:35px;
+
+backdrop-filter:blur(12px);
+
+transition:.4s;
+
+}
+
+.review:hover{
+
+transform:translateY(-10px);
+
+border-color:#00ff88;
+
+box-shadow:0 0 35px rgba(0,255,136,.45);
+
+}
+
+.review p{
+
+color:#ddd;
+
+font-size:18px;
+
+line-height:2;
+
+margin-bottom:25px;
+
+}
+
+.review h3{
+
+color:#00ff88;
+
+font-size:22px;
+
+}
+
+.review span{
+
+color:#888;
+
+font-size:15px;
+
+}
+
+</style>
+
+<section id="reviews">
+
+<h2 class="title">
+
+💬 نظرات کاربران
+
+</h2>
+
+<div class="review-grid">
+
+<div class="review">
+
+<p>
+
+"یکی از بهترین سایت‌های گیمینگی که دیدم. طراحی فوق‌العاده و محتوای جذاب."
+
+</p>
+
+<h3>
+
+⭐ علی رضایی
+
+</h3>
+
+<span>
+
+گیمر
+
+</span>
+
+</div>
+
+<div class="review">
+
+<p>
+
+"هم طراحی سایت عالیه هم ایده‌های پروژه‌ها خیلی جالبه. منتظر آپدیت‌های بعدی هستم."
+
+</p>
+
+<h3>
+
+⭐ محمد کریمی
+
+</h3>
+
+<span>
+
+برنامه‌نویس
+
+</span>
+
+</div>
+
+<div class="review">
+
+<p>
+
+"رابط کاربری سایت خیلی حرفه‌ایه و روی موبایل هم عالی اجرا میشه."
+
+</p>
+
+<h3>
+
+⭐ پارسا احمدی
+
+</h3>
+
+<span>
+
+بازدیدکننده
+
+</span>
+
+</div>
+
+</div>
+
+</section><!-- ===== PART 12 ===== -->
+
+<style>
+
+#live{
+
+padding:110px 8%;
+
+}
+
+.live-grid{
 
 display:grid;
 
@@ -501,614 +1702,55 @@ gap:30px;
 
 }
 
+.live-card{
 
+background:rgba(255,255,255,.05);
 
-.social-card{
+backdrop-filter:blur(15px);
 
-background:#111;
-
-padding:35px;
+border:1px solid rgba(0,255,136,.2);
 
 border-radius:25px;
 
-border:1px solid #333;
+padding:40px;
+
+text-align:center;
 
 transition:.4s;
 
 }
 
+.live-card:hover{
 
+transform:translateY(-10px) scale(1.03);
 
-.social-card:hover{
+box-shadow:0 0 35px rgba(0,255,136,.4);
 
-transform:translateY(-10px);
-
-border-color:#ff6600;
-
-box-shadow:0 0 35px #ff6600;
+border-color:#00ff88;
 
 }
 
+.live-icon{
 
-
-.social-card h2{
-
-color:#ff6600;
-
-font-size:30px;
+font-size:55px;
 
 margin-bottom:20px;
 
 }
 
-
-
-.social-card p{
-
-color:#ccc;
-
-font-size:20px;
-
-line-height:35px;
-
-}
-
-
-
-.social-btn{
-
-display:inline-block;
-
-margin-top:20px;
-
-padding:12px 30px;
-
-background:#ff6600;
-
-color:white;
-
-text-decoration:none;
-
-border-radius:12px;
-
-}
-
-
-
-</style>
-
-
-
-
-<section class="social-section">
-
-
-<h2 class="title">
-
-ارتباط با Amir Gamer
-
-</h2>
-
-
-
-<div class="social-grid">
-
-
-
-<div class="social-card">
-
-<h2>
-
-📺 آپارات
-
-</h2>
-
-
-<p>
-
-کانال ویدیوها
-
-</p>
-
-
-<a class="social-btn" href="#">
-
-ورود
-
-</a>
-
-
-</div>
-
-
-
-
-<div class="social-card">
-
-<h2>
-
-💬 ایتا
-
-</h2>
-
-
-<p>
-
-@Zafii_05
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="social-card">
-
-<h2>
-
-💬 بله
-
-</h2>
-
-
-<p>
-
-@zafii_05
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="social-card">
-
-<h2>
-
-🎧 Discord
-
-</h2>
-
-
-<p>
-
-Amirgamer0219
-
-</p>
-
-
-</div>
-
-
-
-</div>
-
-
-</section><!-- PART 4 -->
-
-
-<style>
-
-
-/* انیمیشن ورود */
-
-.hero,
-.about-box,
-.card,
-.social-card{
-
-animation:show .8s ease;
-
-}
-
-
-@keyframes show{
-
-from{
-
-opacity:0;
-
-transform:translateY(40px);
-
-}
-
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-
-
-
-/* فوتر */
-
-
-footer{
-
-margin-top:100px;
-
-padding:60px 8%;
-
-background:#050505;
-
-border-top:1px solid #ff6600;
-
-text-align:center;
-
-}
-
-
-
-footer h2{
-
-font-size:40px;
-
-color:#ff6600;
-
-}
-
-
-
-footer p{
-
-margin-top:20px;
-
-color:#aaa;
-
-font-size:18px;
-
-line-height:35px;
-
-}
-
-
-
-.footer-btn{
-
-display:inline-block;
-
-margin-top:30px;
-
-padding:15px 35px;
-
-background:#ff6600;
-
-color:white;
-
-text-decoration:none;
-
-border-radius:15px;
-
-box-shadow:0 0 25px #ff6600;
-
-transition:.3s;
-
-}
-
-
-
-.footer-btn:hover{
-
-transform:scale(1.1);
-
-}
-
-
-
-</style>
-
-
-
-
-<footer>
-
-
-<h2>
-
-AMIR GAMER 🎮
-
-</h2>
-
-
-
-<p>
-
-Official Gaming Website
-
-<br>
-
-ساخته شده برای کامیونیتی Amir Gamer 🔥
-
-</p>
-
-
-
-<a class="footer-btn" href="#">
-
-بازگشت به بالا
-
-</a>
-
-
-
-</footer><!-- PART 5 -->
-
-
-<style>
-
-
-html{
-
-scroll-behavior:smooth;
-
-}
-
-
-
-/* دکمه برگشت بالا */
-
-
-.top-btn{
-
-position:fixed;
-
-bottom:25px;
-
-left:25px;
-
-width:55px;
-
-height:55px;
-
-background:#ff6600;
-
-color:white;
-
-border-radius:50%;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-text-decoration:none;
-
-font-size:25px;
-
-box-shadow:0 0 25px #ff6600;
-
-z-index:99;
-
-}
-
-
-
-
-/* افکت نور */
-
-
-body::after{
-
-content:"";
-
-position:fixed;
-
-width:300px;
-
-height:300px;
-
-background:#ff6600;
-
-border-radius:50%;
-
-filter:blur(150px);
-
-opacity:.15;
-
-right:-100px;
-
-bottom:-100px;
-
-z-index:-1;
-
-}
-
-
-
-
-/* موبایل */
-
-
-@media(max-width:800px){
-
-
-
-header{
-
-padding:20px 5%;
-
-}
-
-
-
-.logo{
-
-font-size:25px;
-
-}
-
-
-
-nav{
-
-display:none;
-
-}
-
-
-
-.hero h1{
+.live-number{
 
 font-size:50px;
 
-}
-
-
-
-.hero p{
-
-font-size:18px;
-
-line-height:35px;
-
-}
-
-
-
-.title{
-
-font-size:35px;
-
-}
-
-
-
-.about-box{
-
-padding:25px;
-
-}
-
-
-
-.cards{
-
-padding:30px 5%;
-
-}
-
-
-
-.social-grid{
-
-padding:0;
-
-}
-
-
-
-footer h2{
-
-font-size:30px;
-
-}
-
-
-
-}
-
-
-
-
-/* انتخاب متن */
-
-
-::selection{
-
-background:#ff6600;
-
-color:white;
-
-}
-
-
-</style>
-
-
-
-
-<a href="#" class="top-btn">
-
-↑
-
-</a><!-- PART 6 -->
-
-
-<style>
-
-
-.stats{
-
-padding:100px 8%;
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-
-gap:30px;
-
-}
-
-
-
-.stat-box{
-
-background:#111;
-
-padding:40px 20px;
-
-border-radius:25px;
-
-text-align:center;
-
-border:1px solid #333;
-
-transition:.4s;
-
-}
-
-
-
-.stat-box:hover{
-
-transform:translateY(-10px);
-
-border-color:#ff6600;
-
-box-shadow:0 0 35px #ff6600;
-
-}
-
-
-
-.stat-number{
-
-font-size:55px;
-
 font-weight:900;
 
-color:#ff6600;
+color:#00ff88;
+
+margin-bottom:15px;
 
 }
 
-
-
-.stat-text{
-
-margin-top:15px;
+.live-title{
 
 font-size:20px;
 
@@ -1116,250 +1758,165 @@ color:#ddd;
 
 }
 
-
-
 </style>
 
+<section id="live">
 
+<h2 class="title">
 
+📊 آمار فعالیت
 
-<section class="stats">
+</h2>
 
+<div class="live-grid">
 
+<div class="live-card">
 
-<div class="stat-box">
-
-<div class="stat-number">
-
-63K+
-
-</div>
-
-<div class="stat-text">
-
-فالوور
-
-</div>
-
-</div>
-
-
-
-
-<div class="stat-box">
-
-<div class="stat-number">
+<div class="live-icon">
 
 🎮
 
 </div>
 
-<div class="stat-text">
+<div class="live-number">
 
-Gaming Creator
+500+
+
+</div>
+
+<div class="live-title">
+
+ساعت بازی
 
 </div>
 
 </div>
 
+<div class="live-card">
 
+<div class="live-icon">
 
+🚀
 
-<div class="stat-box">
+</div>
 
-<div class="stat-number">
+<div class="live-number">
 
-🔥
+120+
 
+</div>
 
+<div class="live-title">
 
+پروژه انجام شده
 
-</section><!-- PART 7 -->
+</div>
 
+</div>
+
+<div class="live-card">
+
+<div class="live-icon">
+
+🏆
+
+</div>
+
+<div class="live-number">
+
+35
+
+</div>
+
+<div class="live-title">
+
+دستاورد
+
+</div>
+
+</div>
+
+<div class="live-card">
+
+<div class="live-icon">
+
+❤️
+
+</div>
+
+<div class="live-number">
+
+10K+
+
+</div>
+
+<div class="live-title">
+
+اعضای کامیونیتی
+
+</div>
+
+</div>
+
+</div>
+
+</section><!-- ===== PART 13 ===== -->
 
 <style>
 
-
-.gallery{
+#setups{
 
 padding:100px 8%;
 
-text-align:center;
-
 }
 
-
-
-.gallery-grid{
+.setup-grid{
 
 display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 
 gap:30px;
 
 }
 
+.setup-card{
 
+background:rgba(255,255,255,.05);
 
-.gallery-box{
+backdrop-filter:blur(15px);
 
-height:250px;
-
-background:#111;
+border:1px solid rgba(0,255,136,.2);
 
 border-radius:25px;
-
-border:1px solid #333;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-color:#777;
-
-font-size:22px;
-
-transition:.4s;
-
-}
-
-
-
-.gallery-box:hover{
-
-border-color:#ff6600;
-
-box-shadow:0 0 35px #ff6600;
-
-transform:translateY(-10px);
-
-
-
-color:#ff6600;
-
-}
-
-
-
-</style>
-
-
-
-<section class="gallery">
-
-
-<h2 class="title">
-
-Gaming Gallery
-
-</h2>
-
-
-
-
-<span>
-  
-
-<img src="images/photo1.jpg">
-
-</div>
-  
-</span>
-
-
-<span>
-
-<div class="gallery-box">
-
-<img src="images/photo2.jpg">
-
-</div> 
-
-</span>
-
-</div>
-
-
-
-<div class="gallery-box">
-
-<span>
-
- ۳
-
-</span>
-
-</div>
-
-
-
-</div>
-
-
-</section><!-- PART 8 -->
-
-
-<style>
-
-
-.news{
-
-padding:100px 8%;
-
-text-align:center;
-
-}
-
-
-
-.news-grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-gap:30px;
-
-}
-
-
-
-.news-card{
-
-background:#111;
 
 padding:35px;
 
-border-radius:25px;
-
-border:1px solid #333;
-
-text-align:right;
-
 transition:.4s;
 
 }
 
-
-
-.news-card:hover{
+.setup-card:hover{
 
 transform:translateY(-10px);
 
-border-color:#ff6600;
+border-color:#00ff88;
 
-box-shadow:0 0 35px #ff6600;
+box-shadow:0 0 35px rgba(0,255,136,.4);
 
 }
 
+.setup-icon{
 
+font-size:55px;
 
-.news-card h3{
+margin-bottom:20px;
 
-color:#ff6600;
+}
+
+.setup-card h3{
+
+color:#00ff88;
 
 font-size:28px;
 
@@ -1367,457 +1924,1424 @@ margin-bottom:20px;
 
 }
 
+.setup-card ul{
 
+list-style:none;
 
-.news-card p{
+padding:0;
 
-color:#ccc;
+}
 
-line-height:35px;
+.setup-card li{
+
+padding:10px 0;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+color:#ddd;
 
 font-size:18px;
 
 }
 
+.setup-card li:last-child{
 
+border:none;
 
-.tag{
-
-display:inline-block;
-
-background:#ff6600;
-
-padding:8px 15px;
-
-border-radius:10px;
-
-margin-bottom:20px;
-
-font-size:14px;
-
-
-<div class="gallery-box">
-
-<img src="images/photo3.jpg">
-
-</div>
-
+}
 
 </style>
 
-
-
-
-<section class="news">
-
+<section id="setups">
 
 <h2 class="title">
 
-آخرین فعالیت‌ها
+🖥️ Gaming Setup
 
 </h2>
 
+<div class="setup-grid">
 
+<div class="setup-card">
 
-<div class="news-grid">
+<div class="setup-icon">💻</div>
 
+<h3>سیستم</h3>
 
+<ul>
 
-<div class="news-card">
+<li>پردازنده: بعداً وارد می‌کنم</li>
 
-<div class="tag">
+<li>کارت گرافیک: بعداً وارد می‌کنم</li>
 
-Gaming
+<li>رم: بعداً وارد می‌کنم</li>
 
-</div>
+<li>حافظه: بعداً وارد می‌کنم</li>
 
-
-<h3>
-
-ویدیوهای جدید
-
-</h3>
-
-
-<p>
-
-اینجا می‌تونی جدیدترین ویدیوها و محتواهای خودت رو معرفی کنی.
-
-</p>
-
+</ul>
 
 </div>
 
+<div class="setup-card">
 
+<div class="setup-icon">⌨️</div>
 
+<h3>تجهیزات</h3>
 
-<div class="news-card">
+<ul>
 
-<div class="tag">
+<li>کیبورد: بعداً وارد می‌کنم</li>
 
-Live
+<li>ماوس: بعداً وارد می‌کنم</li>
 
-</div>
+<li>هدست: بعداً وارد می‌کنم</li>
 
+<li>مانیتور: بعداً وارد می‌کنم</li>
 
-<h3>
-
-استریم‌ها
-
-</h3>
-
-
-<p>
-
-زمان استریم‌ها و برنامه‌های آینده اینجا قرار می‌گیرد.
-
-</p>
-
+</ul>
 
 </div>
 
+<div class="setup-card">
 
+<div class="setup-icon">🎮</div>
 
+<h3>بازی‌های مورد علاقه</h3>
 
-<div class="news-card">
+<ul>
 
-<div class="tag">
+<li>Game 1</li>
 
-Update
+<li>Game 2</li>
 
-</div>
+<li>Game 3</li>
 
+<li>Game 4</li>
 
-<h3>
-
-اخبار سایت
-
-</h3>
-
-
-<p>
-
-آخرین خبرها و تغییرات Amir Gamer در این بخش قرار می‌گیرد.
-
-</p>
-
+</ul>
 
 </div>
 
-
-
 </div>
 
-
-</section><!-- PART 9 -->
-
+</section><!-- ===== PART 14 ===== -->
 
 <style>
 
+#leaderboard{
 
-/* افکت کارت‌ها */
-
-
-.card,
-.social-card,
-.stat-box,
-.news-card,
-.gallery-box{
-
-animation:floatIn 1s ease;
+padding:100px 8%;
 
 }
 
+.leaderboard{
 
+max-width:900px;
 
-@keyframes floatIn{
+margin:auto;
 
-from{
+background:rgba(255,255,255,.05);
 
-opacity:0;
+backdrop-filter:blur(15px);
 
-transform:translateY(50px);
+border:1px solid rgba(0,255,136,.2);
 
-}
-
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-
-
-
-/* خط نور دور بخش‌ها */
-
-
-.about-box,
-.card,
-.social-card,
-.stat-box,
-.news-card,
-.gallery-box{
-
-position:relative;
+border-radius:25px;
 
 overflow:hidden;
 
 }
 
+.rank{
 
+display:flex;
 
-.about-box::before,
-.card::before,
-.social-card::before,
-.stat-box::before,
-.news-card::before,
-.gallery-box::before{
+justify-content:space-between;
 
-content:"";
+align-items:center;
 
-position:absolute;
+padding:22px 30px;
 
-top:0;
+border-bottom:1px solid rgba(255,255,255,.08);
 
-left:-100%;
-
-width:100%;
-
-height:2px;
-
-background:#ff6600;
-
-transition:.5s;
+transition:.4s;
 
 }
 
+.rank:last-child{
 
-
-.about-box:hover::before,
-.card:hover::before,
-.social-card:hover::before,
-.stat-box:hover::before,
-.news-card:hover::before,
-.gallery-box:hover::before{
-
-left:100%;
+border-bottom:none;
 
 }
 
+.rank:hover{
 
+background:rgba(0,255,136,.08);
 
+}
 
-/* دکمه‌ها */
+.rank-number{
 
+font-size:30px;
 
-.btn,
-.social-btn,
-.footer-btn{
+font-weight:bold;
+
+color:#00ff88;
+
+width:60px;
+
+}
+
+.rank-name{
+
+flex:1;
+
+font-size:22px;
+
+color:white;
+
+padding-right:20px;
+
+}
+
+.rank-score{
+
+font-size:20px;
+
+font-weight:bold;
+
+color:#00ff88;
+
+}
+
+</style>
+
+<section id="leaderboard">
+
+<h2 class="title">
+
+🏆 Leaderboard
+
+</h2>
+
+<div class="leaderboard">
+
+<div class="rank">
+
+<div class="rank-number">🥇</div>
+
+<div class="rank-name">AMIR GAMER</div>
+
+<div class="rank-score">9999 XP</div>
+
+</div>
+
+<div class="rank">
+
+<div class="rank-number">🥈</div>
+
+<div class="rank-name">Player 2</div>
+
+<div class="rank-score">8450 XP</div>
+
+</div>
+
+<div class="rank">
+
+<div class="rank-number">🥉</div>
+
+<div class="rank-name">Player 3</div>
+
+<div class="rank-score">7920 XP</div>
+
+</div>
+
+<div class="rank">
+
+<div class="rank-number">4</div>
+
+<div class="rank-name">Player 4</div>
+
+<div class="rank-score">6500 XP</div>
+
+</div>
+
+<div class="rank">
+
+<div class="rank-number">5</div>
+
+<div class="rank-name">Player 5</div>
+
+<div class="rank-score">5900 XP</div>
+
+</div>
+
+</div>
+
+</section><!-- ===== PART 15 ===== -->
+
+<style>
+
+#faq{
+
+padding:100px 8%;
+
+}
+
+.faq-container{
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+.faq-item{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(0,255,136,.2);
+
+border-radius:20px;
+
+margin-bottom:20px;
+
+overflow:hidden;
 
 transition:.3s;
 
 }
 
+.faq-item:hover{
 
-
-.btn:hover,
-.social-btn:hover,
-.footer-btn:hover{
-
-transform:scale(1.08);
-
-box-shadow:0 0 35px #ff6600;
+box-shadow:0 0 25px rgba(0,255,136,.3);
 
 }
 
+.faq-question{
 
+padding:25px;
 
-</style><!-- PART 10 -->
+font-size:22px;
 
+font-weight:bold;
+
+cursor:pointer;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+color:#00ff88;
+
+}
+
+.faq-answer{
+
+max-height:0;
+
+overflow:hidden;
+
+padding:0 25px;
+
+color:#ddd;
+
+line-height:2;
+
+transition:max-height .4s ease,padding .4s ease;
+
+}
+
+.faq-item.active .faq-answer{
+
+max-height:250px;
+
+padding:0 25px 25px;
+
+}
+
+.arrow{
+
+transition:.3s;
+
+}
+
+.faq-item.active .arrow{
+
+transform:rotate(180deg);
+
+}
+
+</style>
+
+<section id="faq">
+
+<h2 class="title">
+
+❓ سوالات متداول
+
+</h2>
+
+<div class="faq-container">
+
+<div class="faq-item">
+
+<div class="faq-question">
+
+<span>این سایت درباره چیست؟</span>
+
+<span class="arrow">▼</span>
+
+</div>
+
+<div class="faq-answer">
+
+<p>
+
+این سایت برای معرفی فعالیت‌ها، پروژه‌ها و محتوای گیمینگ Amir Gamer ساخته شده است.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<div class="faq-question">
+
+<span>آیا پروژه‌های جدید اضافه می‌شوند؟</span>
+
+<span class="arrow">▼</span>
+
+</div>
+
+<div class="faq-answer">
+
+<p>
+
+بله، این سایت مرتب به‌روزرسانی می‌شود و امکانات جدید به آن اضافه خواهد شد.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<div class="faq-question">
+
+<span>چطور با من ارتباط بگیرید؟</span>
+
+<span class="arrow">▼</span>
+
+</div>
+
+<div class="faq-answer">
+
+<p>
+
+بعداً لینک شبکه‌های اجتماعی و راه‌های ارتباطی در سایت قرار می‌گیرد.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+document.querySelectorAll(".faq-question").forEach(item=>{
+
+item.addEventListener("click",()=>{
+
+item.parentElement.classList.toggle("active");
+
+});
+
+});
+
+</script><!-- ===== PART 16 ===== -->
 
 <style>
 
-
-/* ظاهر اسکرول */
-
-
-::-webkit-scrollbar{
-
-width:10px;
-
-}
-
-
-::-webkit-scrollbar-track{
-
-background:#050505;
-
-}
-
-
-::-webkit-scrollbar-thumb{
-
-background:#ff6600;
-
-border-radius:20px;
-
-}
-
-
-
-
-
-/* افکت ظاهر شدن بخش‌ها */
-
-
-.reveal{
-
-opacity:0;
-
-transform:translateY(40px);
-
-transition:1s;
-
-}
-
-
-
-.reveal.show{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-
-
-
-
-/* کادر نهایی */
-
-
-.final-section{
+#updates{
 
 padding:100px 8%;
 
-text-align:center;
+}
+
+.update-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+gap:30px;
 
 }
 
+.update-card{
 
+background:rgba(255,255,255,.05);
 
-.final-box{
+backdrop-filter:blur(15px);
 
-background:#111;
+border:1px solid rgba(0,255,136,.2);
 
-border:1px solid #ff6600;
+border-radius:25px;
+
+padding:35px;
+
+transition:.4s;
+
+}
+
+.update-card:hover{
+
+transform:translateY(-12px);
+
+border-color:#00ff88;
+
+box-shadow:0 0 35px rgba(0,255,136,.4);
+
+}
+
+.update-date{
+
+display:inline-block;
+
+padding:8px 18px;
+
+background:#00ff88;
+
+color:#000;
+
+font-weight:bold;
+
+border-radius:12px;
+
+margin-bottom:20px;
+
+}
+
+.update-card h3{
+
+font-size:28px;
+
+color:#00ff88;
+
+margin-bottom:20px;
+
+}
+
+.update-card p{
+
+color:#ddd;
+
+line-height:2;
+
+}
+
+</style>
+
+<section id="updates">
+
+<h2 class="title">
+
+📰 آخرین اخبار
+
+</h2>
+
+<div class="update-grid">
+
+<div class="update-card">
+
+<div class="update-date">
+
+NEW
+
+</div>
+
+<h3>
+
+شروع نسخه جدید سایت
+
+</h3>
+
+<p>
+
+نسخه جدید سایت با طراحی مدرن و امکانات بیشتر در حال توسعه است.
+
+</p>
+
+</div>
+
+<div class="update-card">
+
+<div class="update-date">
+
+UPDATE
+
+</div>
+
+<h3>
+
+پروژه‌های جدید
+
+</h3>
+
+<p>
+
+به‌زودی پروژه‌ها و آموزش‌های جدید به سایت اضافه خواهند شد.
+
+</p>
+
+</div>
+
+<div class="update-card">
+
+<div class="update-date">
+
+COMING SOON
+
+</div>
+
+<h3>
+
+بخش VIP
+
+</h3>
+
+<p>
+
+در آینده بخش اختصاصی برای اعضای ویژه و امکانات بیشتر اضافه می‌شود.
+
+</p>
+
+</div>
+
+</div>
+
+</section><!-- ===== PART 17 ===== -->
+
+<style>
+
+#countdown{
+
+padding:120px 8%;
+
+}
+
+.count-box{
+
+max-width:1000px;
+
+margin:auto;
+
+background:linear-gradient(135deg,#111,#181818);
+
+border:1px solid rgba(0,255,136,.3);
 
 border-radius:30px;
 
-padding:50px;
+padding:60px;
 
-box-shadow:0 0 30px rgba(255,102,0,.2);
+text-align:center;
+
+box-shadow:0 0 40px rgba(0,255,136,.15);
 
 }
 
-
-
-.final-box h2{
+.count-box h2{
 
 font-size:45px;
 
-color:#ff6600;
+color:#00ff88;
+
+margin-bottom:20px;
 
 }
 
-
-
-.final-box p{
-
-margin-top:25px;
+.count-box p{
 
 font-size:20px;
 
 color:#ccc;
 
-line-height:40px;
+margin-bottom:40px;
 
 }
 
+.counter{
 
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:25px;
+
+}
+
+.time{
+
+width:130px;
+
+height:130px;
+
+border-radius:25px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(0,255,136,.2);
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.time h3{
+
+font-size:42px;
+
+color:#00ff88;
+
+}
+
+.time span{
+
+margin-top:10px;
+
+color:#ddd;
+
+font-size:18px;
+
+}
 
 </style>
 
+<section id="countdown">
 
-
-
-<section class="final-section reveal">
-
-
-<div class="final-box">
-
+<div class="count-box">
 
 <h2>
 
-AMIR GAMER 🎮🔥
+🚀 پروژه بعدی
 
 </h2>
 
-
-
 <p>
 
-به دنیای گیمینگ Amir Gamer خوش آمدید.
-
-<br>
-
-اینجا مرکز فعالیت‌ها، محتوا و ارتباط با کامیونیتی است.
+شمارش معکوس تا رونمایی پروژه جدید
 
 </p>
 
+<div class="counter">
 
+<div class="time">
+
+<h3 id="days">00</h3>
+
+<span>روز</span>
 
 </div>
 
+<div class="time">
+
+<h3 id="hours">00</h3>
+
+<span>ساعت</span>
+
+</div>
+
+<div class="time">
+
+<h3 id="minutes">00</h3>
+
+<span>دقیقه</span>
+
+</div>
+
+<div class="time">
+
+<h3 id="seconds">00</h3>
+
+<span>ثانیه</span>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
-
-
-
 <script>
 
+const targetDate = new Date("2026-01-01T00:00:00").getTime();
 
-window.addEventListener("scroll",()=>{
+setInterval(()=>{
 
+const now = new Date().getTime();
 
-let items=document.querySelectorAll(".reveal");
+const distance = targetDate - now;
 
+document.getElementById("days").innerHTML=Math.floor(distance/(1000*60*60*24));
 
-items.forEach(item=>{
+document.getElementById("hours").innerHTML=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
 
+document.getElementById("minutes").innerHTML=Math.floor((distance%(1000*60*60))/(1000*60));
 
-let position=item.getBoundingClientRect().top;
+document.getElementById("seconds").innerHTML=Math.floor((distance%(1000*60))/1000);
 
+},1000);
 
-if(position < window.innerHeight - 100){
+</script><!-- ===== PART 18 ===== -->
 
-item.classList.add("show");
+<style>
+
+#hall{
+
+padding:100px 8%;
 
 }
 
+.hall-grid{
 
-});
+display:grid;
 
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 
-});
+gap:30px;
 
+}
 
-</script>
+.hall-card{
+
+background:linear-gradient(145deg,#111,#1b1b1b);
+
+border:1px solid rgba(0,255,136,.25);
+
+border-radius:25px;
+
+padding:35px;
+
+text-align:center;
+
+transition:.4s;
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+.hall-card::before{
+
+content:"";
+
+position:absolute;
+
+top:-60px;
+
+left:-60px;
+
+width:140px;
+
+height:140px;
+
+background:rgba(0,255,136,.08);
+
+border-radius:50%;
+
+}
+
+.hall-card:hover{
+
+transform:translateY(-12px);
+
+box-shadow:0 0 35px rgba(0,255,136,.45);
+
+border-color:#00ff88;
+
+}
+
+.hall-icon{
+
+font-size:60px;
+
+margin-bottom:20px;
+
+}
+
+.hall-card h3{
+
+color:#00ff88;
+
+font-size:28px;
+
+margin-bottom:15px;
+
+}
+
+.hall-card h2{
+
+font-size:42px;
+
+margin-bottom:15px;
+
+}
+
+.hall-card p{
+
+color:#ccc;
+
+line-height:2;
+
+}
+
+</style>
+
+<section id="hall">
+
+<h2 class="title">
+
+🏅 Hall Of Fame
+
+</h2>
+
+<div class="hall-grid">
+
+<div class="hall-card">
+
+<div class="hall-icon">
+
+🏆
+
+</div>
+
+<h3>
+
+بیشترین ساعات بازی
+
+</h3>
+
+<h2>
+
+500+
+
+</h2>
+
+<p>
+
+ساعت تجربه در بازی‌های مختلف.
+
+</p>
+
+</div>
+
+<div class="hall-card">
+
+<div class="hall-icon">
+
+🚀
+
+</div>
+
+<h3>
+
+پروژه‌های تکمیل شده
+
+</h3>
+
+<h2>
+
+120+
+
+</h2>
+
+<p>
+
+پروژه‌های برنامه‌نویسی و طراحی.
+
+</p>
+
+</div>
+
+<div class="hall-card">
+
+<div class="hall-icon">
+
+👑
+
+</div>
+
+<h3>
+
+هدف بزرگ
+
+</h3>
+
+<h2>
+
+#1
+
+</h2>
+
+<p>
+
+ساخت یکی از بهترین کامیونیتی‌های گیمینگ.
+
+</p>
+
+</div>
+
+</div>
+
+</section><!-- ===== PART 19 ===== -->
+
+<style>
+
+#team{
+
+padding:100px 8%;
+
+}
+
+.team-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+}
+
+.member{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(0,255,136,.2);
+
+border-radius:25px;
+
+padding:35px;
+
+text-align:center;
+
+backdrop-filter:blur(12px);
+
+transition:.4s;
+
+}
+
+.member:hover{
+
+transform:translateY(-12px);
+
+border-color:#00ff88;
+
+box-shadow:0 0 35px rgba(0,255,136,.4);
+
+}
+
+.avatar{
+
+width:90px;
+
+height:90px;
+
+margin:auto;
+
+margin-bottom:20px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:45px;
+
+background:linear-gradient(135deg,#00ff88,#00bfff);
+
+color:#000;
+
+font-weight:bold;
+
+}
+
+.member h3{
+
+font-size:28px;
+
+color:#00ff88;
+
+margin-bottom:10px;
+
+}
+
+.member h4{
+
+font-size:18px;
+
+color:#bbb;
+
+margin-bottom:20px;
+
+}
+
+.member p{
+
+color:#ddd;
+
+line-height:2;
+
+}
+
+</style>
+
+<section id="team">
+
+<h2 class="title">
+
+👑 تیم ما
+
+</h2>
+
+<div class="team-grid">
+
+<div class="member">
+
+<div class="avatar">
+
+A
+
+</div>
+
+<h3>
+
+AMIR
+
+</h3>
+
+<h4>
+
+Founder & Gamer
+
+</h4>
+
+<p>
+
+مدیر سایت، گیمر و توسعه‌دهنده پروژه‌های گیمینگ.
+
+</p>
+
+</div>
+
+<div class="member">
+
+<div class="avatar">
+
+D
+
+</div>
+
+<h3>
+
+Developer
+
+</h3>
+
+<h4>
+
+Web Designer
+
+</h4>
+
+<p>
+
+طراحی رابط کاربری و توسعه بخش‌های مختلف سایت.
+
+</p>
+
+</div>
+
+<div class="member">
+
+<div class="avatar">
+
+C
+
+</div>
+
+<h3>
+
+Community
+
+</h3>
+
+<h4>
+
+Support Team
+
+</h4>
+
+<p>
+
+مدیریت کامیونیتی، پاسخگویی و ارتباط با کاربران.
+
+</p>
+
+</div>
+
+</div>
+
+</section><!-- ===== PART 20 ===== -->
+
+<style>
+
+#contact{
+
+padding:100px 8%;
+
+}
+
+.contact-box{
+
+max-width:900px;
+
+margin:auto;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(0,255,136,.2);
+
+border-radius:30px;
+
+padding:50px;
+
+}
+
+.contact-box h2{
+
+text-align:center;
+
+font-size:45px;
+
+color:#00ff88;
+
+margin-bottom:40px;
+
+}
+
+.contact-form{
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.contact-form input,
+
+.contact-form textarea{
+
+width:100%;
+
+padding:18px;
+
+background:#111;
+
+border:1px solid rgba(255,255,255,.1);
+
+border-radius:15px;
+
+color:white;
+
+font-size:18px;
+
+outline:none;
+
+transition:.3s;
+
+}
+
+.contact-form input:focus,
+
+.contact-form textarea:focus{
+
+border-color:#00ff88;
+
+box-shadow:0 0 15px rgba(0,255,136,.3);
+
+}
+
+.contact-form textarea{
+
+height:180px;
+
+resize:none;
+
+}
+
+.contact-form button{
+
+padding:18px;
+
+font-size:20px;
+
+font-weight:bold;
+
+background:#00ff88;
+
+color:#000;
+
+border:none;
+
+border-radius:15px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.contact-form button:hover{
+
+transform:scale(1.03);
+
+box-shadow:0 0 30px #00ff88;
+
+}
+
+.contact-info{
+
+margin-top:40px;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+}
+
+.info-card{
+
+background:#111;
+
+border-radius:18px;
+
+padding:20px;
+
+text-align:center;
+
+border:1px solid rgba(0,255,136,.2);
+
+transition:.3s;
+
+}
+
+.info-card:hover{
+
+border-color:#00ff88;
+
+box-shadow:0 0 20px rgba(0,255,136,.3);
+
+}
+
+.info-card h3{
+
+color:#00ff88;
+
+margin-bottom:10px;
+
+}
+
+.info-card p{
+
+color:#ccc;
+
+}
+
+</style>
+
+<section id="contact">
+
+<div class="contact-box">
+
+<h2>
+
+📞 ارتباط با من
+
+</h2>
+
+<form class="contact-form">
+
+<input type="text" placeholder="نام شما">
+
+<input type="email" placeholder="ایمیل">
+
+<textarea placeholder="پیام شما..."></textarea>
+
+<button type="submit">
+
+ارسال پیام
+
+</button>
+
+</form>
+
+<div class="contact-info">
+
+<div class="info-card">
+
+<h3>💬 ایتا</h3>
+
+<p>@YourEitaaID</p>
+
+</div>
+
+<div class="info-card">
+
+<h3>📷 اینستاگرام</h3>
+
+<p>@YourInstagram</p>
+
+</div>
+
+<div class="info-card">
+
+<h3>🎮 دیسکورد</h3>
+
+<p>YourDiscord</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
