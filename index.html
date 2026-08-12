@@ -1,418 +1,151 @@
-<!DOCTYPE html>
+from pathlib import Path
+
+html = r"""<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AMIR CITY RPG</title>
-
+<title>AMIR CITY RPG WORLD</title>
 <style>
 body{
 margin:0;
-font-family:tahoma;
+font-family:tahoma,Arial;
 background:#050713;
 color:white;
 }
-
 header{
-height:100vh;
+min-height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-background:
-radial-gradient(circle,#704cff55,transparent),
-#050713;
 text-align:center;
+background:radial-gradient(circle,#634cff55,transparent),#050713;
 }
-
 h1{
 font-size:70px;
 color:#ffd86b;
 }
-
 button{
-background:#754cff;
-color:white;
-border:0;
 padding:15px 30px;
+border:0;
 border-radius:20px;
+background:#7550ff;
+color:white;
 font-size:18px;
-cursor:pointer;
 }
-
-
 .container{
 max-width:1200px;
 margin:auto;
 padding:30px;
 }
-
-
-.player{
-
-display:flex;
-gap:30px;
-align-items:center;
+.player,.admin,.creator{
 background:#10182b;
 padding:30px;
 border-radius:30px;
-
+margin:30px 0;
 }
-
-
-.avatar{
-font-size:100px;
-}
-
-
-.xp{
-height:25px;
-background:#222;
-border-radius:20px;
-overflow:hidden;
-}
-
-.xp div{
-width:70%;
-height:100%;
-background:linear-gradient(90deg,#00eaff,#9b5cff);
-}
-
-
-
 .cards{
-
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:20px;
-
 }
-
-
 .card{
-
 background:#11192c;
-border:1px solid #ffffff20;
 padding:25px;
 border-radius:25px;
-transition:.3s;
-
+border:1px solid #ffffff20;
 }
-
-
-.card:hover{
-
-transform:translateY(-10px);
-border-color:#ffd86b;
-
-}
-
-
 .icon{
-
-font-size:50px;
-
+font-size:45px;
 }
-
-
-
-.quest{
-
-background:#151d33;
-padding:20px;
-margin:15px 0;
+.xp{
+height:20px;
+background:#222;
 border-radius:20px;
-
 }
-
-
-
-.admin{
-
-background:#0c1222;
-padding:30px;
-border-radius:30px;
-
+.xp div{
+width:70%;
+height:100%;
+background:linear-gradient(90deg,#00eaff,#995cff);
+border-radius:20px;
 }
-
-
-
-.creator{
-
-text-align:center;
-background:#17101f;
-padding:40px;
-border-radius:30px;
-
-}
-
-
-
 @media(max-width:800px){
-
 .cards{
-grid-template-columns:repeat(2,1fr);
+grid-template-columns:1fr 1fr;
 }
-
-
-.player{
-flex-direction:column;
-}
-
-
 h1{
-font-size:40px;
+font-size:42px;
 }
-
 }
-
 </style>
-
 </head>
-
 
 <body>
 
-
 <header>
-
 <h1>🏙️ AMIR CITY RPG</h1>
-
-<h2>
-دنیای نقش آفرینی دیجیتال
-</h2>
-
-
-<p>
-Level بگیر، شهر بساز، ماموریت انجام بده
-</p>
-
-
-<button>
+<h2>دنیای نقش آفرینی دیجیتال</h2>
+<p>Level بگیر، شهر بساز، ماموریت انجام بده</p>
+<button onclick="alert('برای خرید وارد برنامه AMIR CITY شوید')">
 ورود به برنامه
 </button>
-
-
 </header>
-
-
-
 
 <div class="container">
 
-
-
 <section class="player">
-
-<div class="avatar">
-🧙‍♂️
-</div>
-
-
-<div>
-
-<h2>
-AMIR PLAYER
-</h2>
-
-
-<p>
-Rank: Elite Gamer
-</p>
-
-
-<p>
-Level 15
-</p>
-
-
-<div class="xp">
-<div></div>
-</div>
-
-
-<p>
-XP 7000 / 10000
-</p>
-
-
-<p>
-🏆 35 Achievement
-⭐ VIP فعال
-</p>
-
-
-</div>
-
-
+<h2>🧙 پروفایل بازیکن</h2>
+<h3>AMIR PLAYER</h3>
+<p>Level 15 | Elite Gamer</p>
+<div class="xp"><div></div></div>
+<p>XP: 7000 / 10000</p>
+<p>🏆 Achievement: 35 ⭐ VIP فعال</p>
 </section>
 
-
-
-
-
-<h2>
-🔥 امکانات AMIR CITY
-</h2>
-
-
+<h2>🔥 امکانات امیرسیتی</h2>
 
 <div class="cards">
 
+<div class="card"><div class="icon">🏠</div><h3>خانه</h3><p>ساخت و ارتقای خانه</p></div>
 
-<div class="card">
-<div class="icon">🏠</div>
-<h3>خانه</h3>
-<p>ساخت و ارتقای خانه در شهر</p>
-</div>
+<div class="card"><div class="icon">🚗</div><h3>خودرو</h3><p>گاراژ و ماشین‌های ویژه</p></div>
 
+<div class="card"><div class="icon">👑</div><h3>VIP</h3><p>امکانات اختصاصی</p></div>
 
+<div class="card"><div class="icon">🎮</div><h3>Game Center</h3><p>مسابقه و چالش</p></div>
 
-<div class="card">
-<div class="icon">🚗</div>
-<h3>خودرو</h3>
-<p>ماشین و گاراژ شخصی</p>
-</div>
+<div class="card"><div class="icon">🎯</div><h3>Quest</h3><p>ماموریت‌ها</p></div>
 
+<div class="card"><div class="icon">🏆</div><h3>Ranking</h3><p>رتبه‌بندی</p></div>
 
+<div class="card"><div class="icon">🧱</div><h3>Minecraft</h3><p>سرورهای بازی</p></div>
 
-<div class="card">
-<div class="icon">👑</div>
-<h3>VIP</h3>
-<p>امکانات ویژه کاربران</p>
-</div>
-
-
-
-<div class="card">
-<div class="icon">🎮</div>
-<h3>Game Center</h3>
-<p>مسابقه و چالش</p>
-</div>
-
-
-
-<div class="card">
-<div class="icon">🎯</div>
-<h3>Quest</h3>
-<p>ماموریت های روزانه</p>
-</div>
-
-
-
-<div class="card">
-<div class="icon">🏆</div>
-<h3>Ranking</h3>
-<p>رتبه بندی بازیکنان</p>
-</div>
-
-
-
-<div class="card">
-<div class="icon">🧱</div>
-<h3>Minecraft</h3>
-<p>سرورهای اختصاصی</p>
-</div>
-
-
-
-<div class="card">
-<div class="icon">🎁</div>
-<h3>Event</h3>
-<p>رویداد و جایزه</p>
-</div>
-
+<div class="card"><div class="icon">🎁</div><h3>Events</h3><p>رویداد و جایزه</p></div>
 
 </div>
 
-
-
-
-
-<h2>
-🎯 Quest ها
-</h2>
-
-
-<div class="quest">
-⭐ ورود روزانه +100 XP
-</div>
-
-
-<div class="quest">
-🔥 شرکت در مسابقه +500 XP
-</div>
-
-
-<div class="quest">
-👑 ماموریت VIP
-</div>
-
-
-
-
-
-<div class="admin">
-
-<h2>
-🛡️ Game Master Panel
-</h2>
-
-
+<section class="admin">
+<h2>🛡️ Game Master Panel</h2>
 <ul>
-
 <li>مدیریت کاربران</li>
-
-<li>مدیریت Level</li>
-
-<li>ساخت Quest</li>
-
 <li>مدیریت VIP</li>
-
-<li>کنترل Event</li>
-
+<li>ساخت Quest</li>
+<li>مدیریت Event</li>
 </ul>
+</section>
 
-
-</div>
-
-
-
-
-<div class="creator">
-
-<h2>
-سازنده
-</h2>
-
-
-<h1>
-جناب آقای امیرعباس میری
-</h1>
-
+<section class="creator">
+<h2>سازنده</h2>
+<h1>جناب آقای امیرعباس میری</h1>
+</section>
 
 </div>
-
-
-
-
-</div>
-
-
-
-
-<script>
-
-document.querySelector("button").onclick=function(){
-
-alert(
-"برای خرید و امکانات وارد برنامه AMIR CITY شوید"
-);
-
-}
-
-</script>
-
 
 </body>
 </html>
+"""
+
+path=Path("/mnt/data/index.html")
+path.write_text(html,encoding="utf-8")
+print(path)
