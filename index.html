@@ -1,114 +1,142 @@
 from pathlib import Path
-import zipfile, shutil
+import shutil, zipfile, re
 
-root = Path("/mnt/data/AMIR_CITY_SITE")
+src_site = Path("/mnt/data/AMIR_CITY_SITE/index.html")
+src_app = Path("/mnt/data/amircity_assets/amir-gamer-amir-city-v5-access-code.html")
+
+root = Path("/mnt/data/AMIR_CITY_SITE_PRO_FINAL")
 if root.exists():
     shutil.rmtree(root)
-root.mkdir()
+(root/"downloads").mkdir(parents=True)
 
-html = """<!doctype html>
-<html lang="fa" dir="rtl">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#070913">
-<title>AMIR CITY | برنامه امیر سیتی</title>
-<style>
-:root{--bg:#070913;--panel:#0e1321;--line:#ffffff14;--text:#f7f9ff;--muted:#9ca8bd;--gold:#f1c75b;--cyan:#58e9ff;--violet:#8a6cff;--green:#8cffb2}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;color:var(--text);font-family:Tahoma,Arial,sans-serif;background:
-radial-gradient(circle at 10% 10%,#5f34ff25,transparent 28%),
-radial-gradient(circle at 90% 15%,#00dfff1e,transparent 30%),
-linear-gradient(180deg,#070913,#090d18 55%,#05070c);overflow-x:hidden}
-a{color:inherit;text-decoration:none}.wrap{width:min(1180px,calc(100% - 28px));margin:auto}
-.navbar{position:sticky;top:0;z-index:50;background:#070913e8;border-bottom:1px solid #ffffff10;backdrop-filter:blur(16px)}
-.nav{min-height:72px;display:flex;align-items:center;gap:14px}.logo{width:48px;height:48px;display:grid;place-items:center;border-radius:15px;background:linear-gradient(135deg,var(--gold),#fff0a3);color:#10131d;font-weight:900}
-.brand b{display:block;color:#ffe99a}.brand small{font-size:9px;color:#7e899e}.links{margin-right:auto;display:flex;gap:6px}.links a{font-size:11px;color:#aeb7ca;padding:9px}
-.hero{min-height:700px;display:flex;align-items:center}.heroGrid{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center;padding:70px 0}
-.tag{display:inline-flex;padding:8px 12px;border:1px solid #f1c75b45;border-radius:999px;background:#f1c75b0b;color:#ffe79d;font-size:10px}
-.hero h1{font-size:clamp(48px,8vw,92px);line-height:.95;margin:18px 0 22px;background:linear-gradient(90deg,#fff,#ffe79d 40%,#58e9ff 72%,#b99cff);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p,.muted{color:var(--muted);line-height:2}.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.btn{padding:13px 17px;border-radius:13px;border:1px solid #ffffff16;background:#111827}.btn.primary{background:linear-gradient(90deg,#0b728f,#6752d9)}
-.phone{padding:20px;border-radius:34px;background:linear-gradient(145deg,#141a2b,#080b13);border:1px solid #ffffff15;box-shadow:0 25px 80px #0009}
-.screen{min-height:500px;border-radius:28px;padding:18px;background:#090d16;border:1px solid #58e9ff20}.appTop{display:flex;justify-content:space-between;font-size:11px;color:#9aa6bb}.appTitle{font-size:30px;font-weight:900;margin:24px 0 10px}
-.balance{padding:18px;border-radius:20px;background:linear-gradient(135deg,#19213b,#111827);border:1px solid #ffffff10}.balance b{font-size:28px;color:#ffe79d}
-.miniGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.mini{padding:16px;border-radius:16px;background:#0d1421;border:1px solid #ffffff0f}.mini strong{display:block;margin-top:8px}
-.notice{margin-top:12px;padding:15px;border-radius:16px;background:#0e1a18;border:1px solid #8cffb225;color:#aef0c4;font-size:12px;line-height:1.8}
-.section{padding:76px 0}.head{display:flex;justify-content:space-between;align-items:end;gap:14px;margin-bottom:24px}.head h2{font-size:clamp(28px,5vw,46px);margin:7px 0}.eyebrow{color:#8cffb2;font-size:10px;letter-spacing:2px}
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{padding:22px;border-radius:22px;background:linear-gradient(145deg,#111724,#0a0e16);border:1px solid #ffffff10}.card h3{margin:10px 0}.card p{font-size:12px;color:#98a4b9;line-height:1.9}.icon{font-size:32px}
-.admin{display:grid;grid-template-columns:.9fr 1.1fr;gap:16px}.adminMock{padding:18px;border-radius:24px;background:#0b1019;border:1px solid #ffffff12}.row{padding:12px;border-radius:12px;background:#0f1520;border:1px solid #ffffff0c;display:flex;justify-content:space-between;margin-top:8px;font-size:11px}
-.buybox{padding:38px;border-radius:30px;background:linear-gradient(135deg,#211a0d,#151421 52%,#09151c);border:1px solid #f1c75b35;text-align:center}.buybox h2{font-size:38px;margin:8px 0}
-.footer{padding:40px 0;border-top:1px solid #ffffff0e;text-align:center;color:#747e91;font-size:10px}
-@media(max-width:950px){.heroGrid,.admin{grid-template-columns:1fr}.grid4{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr 1fr}.links{display:none}}
-@media(max-width:600px){.grid4,.grid3{grid-template-columns:1fr}.hero{min-height:auto}.hero h1{font-size:52px}.head{flex-direction:column;align-items:start}}
-</style>
-</head>
-<body>
-<nav class="navbar"><div class="wrap nav">
-<div class="logo">AC</div><div class="brand"><b>AMIR CITY</b><small>AMIRYAN DIGITAL APP</small></div>
-<div class="links"><a href="#about">درباره</a><a href="#features">امکانات</a><a href="#admin">ادمین پنل</a><a href="#buy">خرید داخل برنامه</a></div>
-</div></nav>
+html = src_site.read_text(encoding="utf-8")
+shutil.copy2(src_app, root/"downloads"/"AmirCity-App.html")
 
-<header class="hero"><div class="wrap heroGrid">
-<div><div class="tag">AMIR CITY · GAMING APP</div><h1>امیر سیتی<br>دنیای دیجیتال شما</h1>
-<p>امیر سیتی یک برنامه گیم‌محور برای مدیریت حساب، خدمات دیجیتال، شهر مجازی، امکانات VIP، سفارش‌ها و بخش‌های اختصاصی کاربران است. این سایت فقط برنامه را معرفی می‌کند و هیچ چیزی مستقیماً در سایت فروخته نمی‌شود.</p>
-<div class="cta"><a href="#buy" class="btn primary">خرید فقط داخل برنامه</a><a href="#features" class="btn">دیدن امکانات</a></div></div>
-<div class="phone"><div class="screen">
-<div class="appTop"><span>AMIR CITY</span><span>ONLINE ●</span></div>
-<div class="appTitle">پنل کاربری</div>
-<div class="balance"><small>حساب کاربری</small><br><b>AMIR+</b><div class="muted" style="font-size:11px">همه خریدها از داخل برنامه انجام می‌شود.</div></div>
-<div class="miniGrid">
-<div class="mini">🏙️<strong>Amir City</strong><small class="muted">خانه و خودرو مجازی</small></div>
-<div class="mini">🎮<strong>Game Center</strong><small class="muted">خدمات گیم</small></div>
-<div class="mini">👑<strong>VIP</strong><small class="muted">دسترسی ویژه</small></div>
-<div class="mini">🛡️<strong>Insurance</strong><small class="muted">خدمات حساب</small></div>
-</div><div class="notice">🛒 برای خرید و ثبت سفارش وارد خود برنامه شوید.</div>
-</div></div>
-</div></header>
+# Add stronger styling
+html = html.replace("</style>", r"""
+.comment-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.comment-card{padding:18px;border-radius:18px;background:#0e1420;border:1px solid #ffffff10;margin-top:10px}
+.admin-private{margin-top:20px;padding:22px;border-radius:22px;background:#090f18;border:1px solid #f1c75b30}
+.field{display:grid;gap:6px;font-size:11px;color:#bac6d8}.form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field.wide{grid-column:1/-1}.hidden{display:none!important}
+.creator{padding:38px;border-radius:30px;background:linear-gradient(135deg,#171327,#0b111b 58%,#20180a);border:1px solid #f1c75b35;text-align:center}
+.creator strong{display:block;font-size:clamp(30px,6vw,54px);color:#ffe79d;margin:10px 0}
+@media(max-width:700px){.comment-grid,.form{grid-template-columns:1fr}.field.wide{grid-column:auto}}
+""" + "</style>")
 
-<section class="section" id="about"><div class="wrap"><div class="head"><div><div class="eyebrow">ABOUT</div><h2>امیر سیتی چیست؟</h2></div></div>
-<div class="grid3">
-<div class="card"><div class="icon">🎮</div><h3>مرکز خدمات گیم</h3><p>مدیریت فعالیت‌های گیمری، سفارش‌ها و خدمات دیجیتال از داخل برنامه.</p></div>
-<div class="card"><div class="icon">🏙️</div><h3>شهر مجازی</h3><p>بخش امیر سیتی برای خانه، خودرو و امکانات مجازی حساب کاربری.</p></div>
-<div class="card"><div class="icon">⚙️</div><h3>مدیریت حساب</h3><p>پروفایل، وضعیت سفارش‌ها، دسترسی VIP و امکانات کاربری در یک محیط واحد.</p></div>
-</div></div></section>
+# More feature cards
+extra_features = """
+<div class="card"><div class="icon">🧱</div><h3>سرور ماینکرفت</h3><p>درخواست ساخت سرور معمولی یا VIP و مدیریت پروژه‌های گروهی.</p></div>
+<div class="card"><div class="icon">🛋️</div><h3>تجهیز خانه</h3><p>پک‌های خانه، آشپزخانه، اتاق گیمینگ و لوازم مجازی امیرسیتی.</p></div>
+<div class="card"><div class="icon">⏱️</div><h3>تایم گیم</h3><p>ثبت درخواست و هماهنگی تایم‌های گیم از داخل برنامه.</p></div>
+<div class="card"><div class="icon">🎁</div><h3>جایزه و رویداد</h3><p>چالش‌ها، مسابقات و برنامه‌های ویژه برای کاربران.</p></div>
+"""
+html = html.replace('</div></div></section>\n\n<section class="section" id="admin">', extra_features + '</div></div></section>\n\n<section class="section" id="admin">', 1)
 
-<section class="section" id="features"><div class="wrap"><div class="head"><div><div class="eyebrow">FEATURES</div><h2>امکانات برنامه</h2></div></div>
-<div class="grid4">
-<div class="card"><div class="icon">🛒</div><h3>فروشگاه داخل برنامه</h3><p>هیچ محصولی در این سایت برای فروش نیست؛ خریدها فقط داخل برنامه انجام می‌شوند.</p></div>
-<div class="card"><div class="icon">🏠</div><h3>خانه در امیر سیتی</h3><p>مدیریت امکانات خانه و دارایی‌های مجازی داخل شهر.</p></div>
-<div class="card"><div class="icon">🚗</div><h3>خودرو</h3><p>بخش خودروهای مجازی و امکانات مرتبط با شهر.</p></div>
-<div class="card"><div class="icon">👑</div><h3>VIP</h3><p>سطح ویژه کاربری و قابلیت‌هایی که توسط مدیریت فعال می‌شوند.</p></div>
-<div class="card"><div class="icon">🛡️</div><h3>بیمه</h3><p>بخش خدمات و مدیریت دارایی‌های داخل برنامه.</p></div>
-<div class="card"><div class="icon">🎯</div><h3>رویدادها</h3><p>چالش‌ها، مسابقات و رویدادهای ویژه کاربران.</p></div>
-<div class="card"><div class="icon">📦</div><h3>پیگیری سفارش</h3><p>مشاهده وضعیت درخواست‌ها و سفارش‌های ثبت‌شده.</p></div>
-<div class="card"><div class="icon">💬</div><h3>پشتیبانی</h3><p>ارتباط با پشتیبانی و پیگیری درخواست‌های کاربران.</p></div>
-</div></div></section>
+# Replace buy box button with app file
+html = html.replace(
+'<span class="btn primary">خرید در برنامه AMIR CITY</span>',
+'<a class="btn primary" href="downloads/AmirCity-App.html" download>⬇️ دانلود فایل برنامه</a> <a class="btn" href="downloads/AmirCity-App.html">🚀 باز کردن برنامه</a>'
+)
 
-<section class="section" id="admin"><div class="wrap"><div class="head"><div><div class="eyebrow">ADMIN PANEL</div><h2>ادمین پنل امیر سیتی</h2></div></div>
-<div class="admin">
-<div class="card"><div class="icon">🧩</div><h3>مدیریت حرفه‌ای</h3><p>ادمین پنل برای مدیریت کاربران، سفارش‌ها، دسترسی VIP، درخواست‌ها و وضعیت سرویس‌ها طراحی شده است. اطلاعات ورود مدیران در سایت عمومی نمایش داده نمی‌شود.</p></div>
-<div class="adminMock"><b>AMIR CITY ADMIN · SYSTEM ONLINE</b>
-<div class="row"><span>کاربران</span><span style="color:#8cffb2">فعال</span></div>
-<div class="row"><span>سفارش‌ها</span><span style="color:#58e9ff">در حال بررسی</span></div>
-<div class="row"><span>VIP</span><span style="color:#ffe79d">مدیریت دسترسی</span></div>
-<div class="row"><span>پشتیبانی</span><span style="color:#8cffb2">آنلاین</span></div>
-</div></div></div></section>
+comments_section = r"""
+<section class="section" id="comments"><div class="wrap">
+<div class="head"><div><div class="eyebrow">COMMENTS</div><h2>نظر کاربران</h2></div><div class="muted">نظر خودت را ثبت کن</div></div>
+<div class="comment-grid">
+<div class="card">
+<h3>✍️ ثبت کامنت</h3>
+<form id="commentForm" class="form">
+<label class="field">نام و نام خانوادگی<input id="cmName" required></label>
+<label class="field">شغل<input id="cmJob" required placeholder="مثلاً دانش‌آموز، گیمر..."></label>
+<label class="field">از کجا با ما آشنا شدی؟<input id="cmSource" required></label>
+<label class="field">گروه / تیم<input id="cmGroup" required></label>
+<label class="field">تاریخ تولد<input id="cmBirth" type="date" required></label>
+<label class="field">امتیاز<select id="cmRate"><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select></label>
+<label class="field wide">کامنت<textarea id="cmText" required placeholder="نظرت را بنویس..."></textarea></label>
+<div class="field wide"><button class="btn primary" type="submit">ثبت کامنت</button></div>
+</form>
+<p id="cmMsg" class="muted"></p>
+</div>
+<div class="card">
+<h3>💬 کامنت‌های کاربران</h3>
+<p class="muted">در بخش عمومی فقط نام، گروه، امتیاز و متن کامنت نمایش داده می‌شود.</p>
+<div id="publicComments"></div>
+</div>
+</div>
 
-<section class="section" id="buy"><div class="wrap"><div class="buybox">
-<div class="eyebrow">BUY IN APP</div><h2>برای خرید وارد برنامه شوید</h2>
-<p class="muted">این وب‌سایت فروشگاه نیست. هیچ آیتم، اعتبار، خدمات یا محصولی مستقیماً از این صفحه فروخته نمی‌شود. برای مشاهده گزینه‌های موجود و ثبت سفارش، از داخل برنامه امیر سیتی استفاده کنید.</p>
-<span class="btn primary">خرید در برنامه AMIR CITY</span>
-</div></div></section>
+<div class="admin-private">
+<div id="commentAdminLock">
+<div class="eyebrow">ADMIN COMMENTS</div><h3>🔐 پنل ادمین کامنت‌ها</h3>
+<input id="commentAdminPass" type="password" inputmode="numeric" placeholder="رمز مدیر">
+<button class="btn" onclick="openCommentAdmin()">ورود</button>
+<p id="commentAdminMsg" class="muted"></p>
+</div>
+<div id="commentAdminPanel" class="hidden">
+<h3>اطلاعات کامل کامنت‌ها</h3>
+<p class="muted">اینجا شغل، منبع آشنایی، گروه و تاریخ تولد هم نمایش داده می‌شود.</p>
+<div id="adminComments"></div>
+<button class="btn danger" onclick="closeCommentAdmin()">خروج</button>
+</div>
+</div>
+</div></section>
 
-<footer class="footer"><div class="wrap">© 2026 AMIR CITY · AMIRYAN DIGITAL APP<br>وب‌سایت معرفی برنامه امیر سیتی</div></footer>
-</body></html>"""
+<section class="section" id="creator"><div class="wrap">
+<div class="creator">
+<div class="eyebrow">CREATOR</div>
+<span class="muted">سازنده و طراح پروژه</span>
+<strong>جناب آقای امیرعباس میری</strong>
+<p class="muted">سازنده برنامه و پروژه AMIR CITY</p>
+</div>
+</div></section>
+"""
+
+html = html.replace('<footer class="footer">', comments_section + '\n<footer class="footer">')
+html = html.replace('وب‌سایت معرفی برنامه امیر سیتی', 'وب‌سایت رسمی برنامه امیر سیتی · سازنده: جناب آقای امیرعباس میری')
+
+script = r"""
+<script>
+const COMMENT_KEY="amirCitySiteCommentsV2", COMMENT_ADMIN_PASS="7865";
+function getComments(){try{return JSON.parse(localStorage.getItem(COMMENT_KEY)||"[]")}catch(e){return[]}}
+function saveComments(a){localStorage.setItem(COMMENT_KEY,JSON.stringify(a))}
+function esc(s){return String(s??"").replace(/[&<>"']/g,function(m){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]})}
+function stars(n){return "⭐".repeat(Number(n)||0)}
+function renderPublic(){
+ const a=getComments(),box=document.getElementById("publicComments");
+ box.innerHTML=a.length?a.slice().reverse().map(c=>`<div class="comment-card"><b>${esc(c.name)}</b> ${stars(c.rate)}<br><small>گروه: ${esc(c.group)} · ${esc(c.created)}</small><p>${esc(c.text)}</p></div>`).join(""):'<p class="muted">هنوز کامنتی ثبت نشده.</p>';
+}
+function renderAdmin(){
+ const a=getComments(),box=document.getElementById("adminComments");
+ box.innerHTML=a.length?a.slice().reverse().map((c,r)=>{let i=a.length-1-r;return `<div class="comment-card"><b>${esc(c.name)}</b><br>شغل: ${esc(c.job)}<br>از کجا آمده: ${esc(c.source)}<br>گروه: ${esc(c.group)}<br>تاریخ تولد: ${esc(c.birth)}<br>زمان ثبت: ${esc(c.created)}<br>امتیاز: ${stars(c.rate)}<p>${esc(c.text)}</p><button class="btn danger" onclick="deleteComment(${i})">حذف</button></div>`}).join(""):'<p class="muted">کامنتی وجود ندارد.</p>';
+}
+document.getElementById("commentForm").addEventListener("submit",function(e){
+ e.preventDefault();
+ const c={name:cmName.value.trim(),job:cmJob.value.trim(),source:cmSource.value.trim(),group:cmGroup.value.trim(),birth:cmBirth.value,rate:cmRate.value,text:cmText.value.trim(),created:new Date().toLocaleString("fa-IR")};
+ if(!c.name||!c.job||!c.source||!c.group||!c.birth||!c.text){cmMsg.textContent="همه اطلاعات را کامل کن.";return}
+ const a=getComments();a.push(c);saveComments(a);this.reset();cmMsg.textContent="کامنت ثبت شد.";renderPublic();
+});
+function openCommentAdmin(){if(commentAdminPass.value!==COMMENT_ADMIN_PASS){commentAdminMsg.textContent="رمز اشتباه است.";return}commentAdminLock.classList.add("hidden");commentAdminPanel.classList.remove("hidden");renderAdmin()}
+function closeCommentAdmin(){commentAdminPanel.classList.add("hidden");commentAdminLock.classList.remove("hidden");commentAdminPass.value="";commentAdminMsg.textContent=""}
+function deleteComment(i){let a=getComments();a.splice(i,1);saveComments(a);renderPublic();renderAdmin()}
+renderPublic();
+</script>
+"""
+html = html.replace("</body>", script + "\n</body>")
 
 (root/"index.html").write_text(html, encoding="utf-8")
-(root/"README.txt").write_text("AMIR CITY website\nفایل اصلی: index.html\nاین سایت فقط برنامه را معرفی می‌کند و هیچ محصولی در سایت فروخته نمی‌شود.", encoding="utf-8")
+(root/"README.txt").write_text(
+"""AMIR CITY SITE PRO FINAL
+فایل سایت: index.html
+فایل برنامه: downloads/AmirCity-App.html
+رمز پنل ادمین کامنت‌ها: 7865
 
-zip_path = Path("/mnt/data/AMIR_CITY_SITE.zip")
-with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
-    z.write(root/"index.html", "index.html")
-    z.write(root/"README.txt", "README.txt")
+کامنت‌ها در این نسخه داخل LocalStorage همان مرورگر ذخیره می‌شوند.
+برای دیدن کامنت‌های کاربران از دستگاه‌های مختلف، باید سایت به دیتابیس آنلاین وصل شود.
+""", encoding="utf-8")
 
-print(zip_path)
+out=Path("/mnt/data/AMIR_CITY_SITE_PRO_FINAL.zip")
+with zipfile.ZipFile(out,"w",zipfile.ZIP_DEFLATED) as z:
+    for f in root.rglob("*"):
+        if f.is_file():
+            z.write(f,arcname=f.relative_to(root))
+print(out)
+
