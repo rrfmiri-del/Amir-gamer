@@ -1,186 +1,1901 @@
-<!doctype html>
-<html lang="fa" dir="rtl">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#05060b">
-<title>سایت شرکت کسب و کار گیم امیریان</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>⚡ X.IO ⚔️</title>
+
 <style>
-:root{
- --bg:#05060b;--panel:#0c0f18;--panel2:#111629;--line:#ffffff14;
- --text:#f7f8ff;--muted:#98a1b7;--gold:#e9c760;--gold2:#ffe69a;
- --cyan:#55e7ff;--violet:#9d6cff;--lime:#a9ff66;
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:
- radial-gradient(circle at 14% 9%,#612eff28,transparent 27%),
- radial-gradient(circle at 87% 13%,#00dfff20,transparent 27%),
- radial-gradient(circle at 50% 88%,#a9ff6610,transparent 30%),
- linear-gradient(180deg,#05060b,#080c16 55%,#030408);
- color:var(--text);font-family:Tahoma,Arial,sans-serif;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
- background-image:linear-gradient(#55e7ff07 1px,transparent 1px),linear-gradient(90deg,#55e7ff07 1px,transparent 1px);
- background-size:42px 42px}
-a{color:inherit;text-decoration:none}.wrap{width:min(1180px,calc(100% - 28px));margin:auto}
-.navbar{position:sticky;top:0;z-index:50;background:#05060be6;border-bottom:1px solid #ffffff0f;backdrop-filter:blur(18px)}
-.nav{min-height:72px;display:flex;align-items:center;gap:14px}
-.logoText{width:48px;height:48px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#111;font-weight:900;font-size:18px;box-shadow:0 0 26px #e9c76035;transform:skew(-8deg)}
-.brand b{display:block;color:var(--gold2);font-size:15px}.brand small{color:#7f899f;font-size:9px}
-.links{margin-right:auto;display:flex;gap:5px;flex-wrap:wrap}.links a{font-size:11px;color:#adb5ca;padding:9px 10px;border-radius:10px}.links a:hover{background:#ffffff09;color:#fff}
-.hero{min-height:720px;display:flex;align-items:center;position:relative;overflow:hidden}
-.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#05060b 3%,transparent 65%),radial-gradient(circle at 75% 45%,#6a38d034,transparent 25%)}
-.heroGrid{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center;padding:70px 0}
-.tag{display:inline-flex;padding:7px 11px;border:1px solid #e9c7603d;border-radius:999px;background:#e9c7600b;color:#ffe69a;font-size:10px;letter-spacing:1px}
-.hero h1{font-size:clamp(48px,8vw,94px);line-height:.95;margin:18px 0 22px;letter-spacing:-3px;background:linear-gradient(90deg,#fff,#ffe69a 42%,#55e7ff 72%,#bd97ff);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p,.muted{color:var(--muted);line-height:2}.hero p{font-size:15px;max-width:720px}
-.heroPanel{padding:24px;border-radius:28px;background:linear-gradient(145deg,#12172a,#090c14);border:1px solid #ffffff12;box-shadow:0 25px 80px #0008}
-.console{min-height:390px;border-radius:22px;background:#080b12;border:1px solid #55e7ff20;position:relative;overflow:hidden;padding:20px}
-.console:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#55e7ff09 1px,transparent 1px),linear-gradient(90deg,#55e7ff09 1px,transparent 1px);background-size:24px 24px}
-.consoleRing{position:absolute;width:230px;height:230px;border:1px solid #55e7ff45;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);box-shadow:0 0 50px #55e7ff12}
-.consoleRing:before,.consoleRing:after{content:"";position:absolute;border-radius:50%;inset:18%;border:1px dashed #e9c76055;animation:spin 7s linear infinite}.consoleRing:after{inset:38%;animation-direction:reverse;animation-duration:4s}
-@keyframes spin{to{transform:rotate(360deg)}}
-.consoleTitle{position:relative;z-index:2;color:#a9ff66;font-family:monospace;direction:ltr;font-size:11px;line-height:1.7}
-.consoleBig{
-position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-padding:30px 16px;text-align:center;direction:ltr;
-font-size:clamp(38px,7vw,76px);font-weight:900;letter-spacing:2px;
-color:#ffffff12;text-shadow:0 0 28px #55e7ff18;
-white-space:nowrap;overflow:visible
+
+html{
+    scroll-behavior:smooth;
 }
-.consoleStatus{position:absolute;right:18px;bottom:18px;direction:ltr;text-align:right;font-family:monospace;font-size:10px;color:#8c98ad;line-height:1.8}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:-36px;position:relative;z-index:3}.stat{padding:16px;border-radius:17px;background:#0d111bdd;border:1px solid #ffffff11;text-align:center;backdrop-filter:blur(12px)}.stat b{display:block;color:#ffe69a;font-size:20px}.stat small{color:#818ca1;font-size:10px}
-.section{padding:76px 0}.head{display:flex;justify-content:space-between;gap:14px;align-items:end;margin-bottom:24px}.head h2{font-size:clamp(28px,5vw,46px);margin:7px 0}.eyebrow{color:#a9ff66;font-size:10px;letter-spacing:2px}
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.card{padding:21px;border-radius:22px;background:linear-gradient(145deg,#111521,#090c13);border:1px solid #ffffff10;transition:.2s;position:relative;overflow:hidden}.card:hover{transform:translateY(-4px);border-color:#55e7ff35}.icon{font-size:32px}.card h3{margin:10px 0 7px;color:#f5f6ff}.card p{color:#939db2;line-height:1.9;font-size:12px}
-.timeline{display:grid;gap:12px}.step{display:grid;grid-template-columns:70px 1fr;gap:16px;align-items:start;padding:18px;border-radius:20px;background:#0d111a;border:1px solid #ffffff10}.num{font-size:34px;font-weight:900;color:#e9c760}.step h3{margin:0 0 7px}.step p{margin:0;color:#929caf;line-height:1.9;font-size:12px}
-.team{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.person{padding:20px;border-radius:20px;background:#0f131d;border:1px solid #ffffff10;position:relative;overflow:hidden}.person:after{content:"";position:absolute;right:0;top:0;width:4px;height:100%;background:linear-gradient(var(--gold2),#7c5b20)}.role{color:#b99b4e;font-size:10px}.person h3{margin:8px 0 0}
-.achievementHero{padding:38px;border-radius:30px;background:linear-gradient(135deg,#211a0d,#13131f 52%,#09151c);border:1px solid #e9c76035;text-align:center;position:relative;overflow:hidden}.achievementHero:after{content:"30";position:absolute;left:-20px;bottom:-70px;font-size:210px;font-weight:900;color:#ffffff03;direction:ltr}.medalNum{font-size:clamp(72px,15vw,150px);font-weight:900;line-height:1;color:#ffe69a;text-shadow:0 0 35px #e9c76030}.achievementHero h2{font-size:36px;margin:12px 0}.achievementGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}.achievement{padding:20px;border-radius:20px;background:#10141d;border:1px solid #ffffff10}.achievement strong{display:block;font-size:24px;color:#a9ff66;margin-top:10px}
-.gameBox{padding:30px;border-radius:28px;background:linear-gradient(135deg,#10162c,#121024 56%,#07191a);border:1px solid #55e7ff25}.gameBox h2{font-size:38px;margin:8px 0}.gameBox p{color:#a0aac0;line-height:2}
-.values{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.value{padding:20px;border-radius:18px;border:1px solid #ffffff10;background:#0e121b;text-align:center}.value b{display:block;color:#55e7ff;font-size:20px;margin-bottom:7px}.value small{color:#8892a6}
-.support{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}.supportCard{padding:28px;border-radius:26px;background:#10131b;border:1px solid #ffffff10}.phone{font-size:clamp(30px,6vw,52px);font-weight:900;color:#ffe69a;direction:ltr;text-align:right}.channels{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.pill{padding:9px 12px;border-radius:999px;border:1px solid #e9c76035;background:#e9c7600c;color:#e7d390;font-size:11px}
-.footer{padding:40px 0;border-top:1px solid #ffffff0e;text-align:center;color:#747e91;font-size:10px;line-height:2}
-@media(max-width:950px){.heroGrid{grid-template-columns:1fr}.grid4,.values{grid-template-columns:1fr 1fr}.grid3,.team,.achievementGrid{grid-template-columns:1fr 1fr}.support{grid-template-columns:1fr}.links{display:none}.stats{grid-template-columns:1fr 1fr;margin-top:0}}
-@media(max-width:600px){.consoleBig{font-size:38px;letter-spacing:1px}.hero h1 span{font-size:.38em!important;letter-spacing:3px!important}.grid4,.grid3,.grid2,.team,.achievementGrid,.values{grid-template-columns:1fr}.hero{min-height:auto}.hero h1{font-size:52px;letter-spacing:-2px}.head{flex-direction:column;align-items:start}.step{grid-template-columns:48px 1fr}.console{min-height:300px}}
+
+body{
+    background:#030303;
+    color:#fff;
+    font-family:Arial,Helvetica,sans-serif;
+    overflow-x:hidden;
+}
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+body{
+    background:
+        radial-gradient(circle at 50% 0%,rgba(0,130,255,.12),transparent 30%),
+        radial-gradient(circle at 10% 60%,rgba(90,0,255,.07),transparent 25%),
+        #030303;
+}
+
+.noise{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.035;
+    z-index:999;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+
+.grid{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.08;
+    background-image:
+        linear-gradient(rgba(0,160,255,.25) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(0,160,255,.25) 1px,transparent 1px);
+    background-size:60px 60px;
+    mask-image:linear-gradient(to bottom,transparent,black 30%,black 70%,transparent);
+}
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+.particle{
+    position:fixed;
+    width:2px;
+    height:2px;
+    background:#fff;
+    border-radius:50%;
+    opacity:.5;
+    pointer-events:none;
+    animation:float linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(110vh);
+        opacity:0;
+    }
+
+    20%{
+        opacity:.5;
+    }
+
+    80%{
+        opacity:.4;
+    }
+
+    to{
+        transform:translateY(-10vh);
+        opacity:0;
+    }
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:75px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 6%;
+
+    background:rgba(3,3,3,.65);
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+    z-index:1000;
+}
+
+.nav-logo{
+    font-size:20px;
+    font-weight:900;
+    white-space:nowrap;
+
+    text-shadow:
+        0 0 10px rgba(0,150,255,.8),
+        0 0 25px rgba(0,150,255,.4);
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    color:#777;
+    text-decoration:none;
+    font-size:10px;
+    letter-spacing:2px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#fff;
+    text-shadow:0 0 10px #008cff;
+}
+
+.online{
+    font-size:9px;
+    color:#666;
+    letter-spacing:2px;
+}
+
+.online span{
+    color:#00ff88;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    text-align:center;
+    padding:120px 20px 80px;
+}
+
+.hero-glow{
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    background:#008cff;
+
+    filter:blur(180px);
+
+    opacity:.12;
+
+    animation:heroGlow 5s infinite alternate;
+}
+
+@keyframes heroGlow{
+
+    from{
+        transform:scale(.8);
+        opacity:.08;
+    }
+
+    to{
+        transform:scale(1.2);
+        opacity:.15;
+    }
+
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    animation:heroIn 1.5s ease;
+}
+
+@keyframes heroIn{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.logo{
+    font-size:clamp(42px,10vw,110px);
+
+    font-weight:900;
+
+    white-space:nowrap;
+
+    letter-spacing:2px;
+
+    text-shadow:
+        0 0 8px #008cff,
+        0 0 25px #008cff,
+        0 0 55px rgba(0,140,255,.6),
+        0 0 100px rgba(0,140,255,.2);
+
+    animation:logoPulse 3s infinite alternate;
+}
+
+@keyframes logoPulse{
+
+    from{
+        filter:brightness(1);
+    }
+
+    to{
+        filter:brightness(1.4);
+    }
+
+}
+
+.hero-line{
+    width:100px;
+    height:2px;
+
+    background:#008cff;
+
+    margin:35px auto;
+
+    box-shadow:
+        0 0 10px #008cff,
+        0 0 30px #008cff;
+}
+
+.hero-title{
+    color:#aaa;
+
+    font-size:14px;
+
+    letter-spacing:10px;
+}
+
+.hero-description{
+    max-width:650px;
+
+    margin:30px auto;
+
+    color:#666;
+
+    font-size:14px;
+
+    line-height:2;
+
+}
+
+.hero-members{
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    padding:10px 20px;
+
+    border:1px solid rgba(0,140,255,.25);
+
+    border-radius:50px;
+
+    color:#777;
+
+    font-size:10px;
+
+    letter-spacing:3px;
+
+    background:rgba(0,140,255,.03);
+
+}
+
+.scroll{
+
+    position:absolute;
+
+    bottom:35px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:#444;
+
+    font-size:9px;
+
+    letter-spacing:4px;
+
+}
+
+.scroll-arrow{
+
+    margin-top:10px;
+
+    font-size:20px;
+
+    animation:scrollArrow 1.5s infinite;
+
+}
+
+@keyframes scrollArrow{
+
+    50%{
+        transform:translateY(10px);
+    }
+
+}
+
+/* =========================================================
+   GENERAL SECTION
+========================================================= */
+
+section{
+    position:relative;
+
+    min-height:100vh;
+
+    padding:120px 7%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+.section-container{
+    width:100%;
+    max-width:1200px;
+}
+
+.section-heading{
+    margin-bottom:60px;
+}
+
+.section-number{
+    color:#008cff;
+
+    font-size:10px;
+
+    letter-spacing:5px;
+
+    margin-bottom:15px;
+}
+
+.section-heading h2{
+    font-size:clamp(30px,5vw,55px);
+
+    font-weight:900;
+
+    letter-spacing:2px;
+}
+
+.section-heading p{
+    margin-top:20px;
+
+    color:#666;
+
+    max-width:600px;
+
+    line-height:1.8;
+
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about{
+    background:
+        linear-gradient(
+            180deg,
+            #030303,
+            #06090d,
+            #030303
+        );
+}
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.about-text p{
+
+    color:#777;
+
+    font-size:15px;
+
+    line-height:2;
+
+    margin-bottom:20px;
+
+}
+
+.highlight{
+    color:#fff;
+}
+
+.about-card{
+
+    padding:40px;
+
+    border:1px solid rgba(255,255,255,.07);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.04),
+            rgba(255,255,255,.01)
+        );
+
+    border-radius:25px;
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.4);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.about-card:before{
+
+    content:"";
+
+    position:absolute;
+
+    width:150px;
+
+    height:150px;
+
+    background:#008cff;
+
+    filter:blur(100px);
+
+    opacity:.12;
+
+    right:-50px;
+
+    top:-50px;
+
+}
+
+.big-number{
+
+    font-size:65px;
+
+    font-weight:900;
+
+    text-shadow:0 0 25px rgba(0,140,255,.5);
+
+}
+
+.small-label{
+
+    color:#555;
+
+    font-size:10px;
+
+    letter-spacing:4px;
+
+}
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features{
+
+    background:#040404;
+
+}
+
+.feature-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+.feature{
+
+    min-height:240px;
+
+    padding:35px;
+
+    border-radius:22px;
+
+    border:1px solid rgba(255,255,255,.07);
+
+    background:rgba(255,255,255,.018);
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:.4s;
+
+}
+
+.feature:before{
+
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+
+    height:120px;
+
+    background:#008cff;
+
+    filter:blur(80px);
+
+    opacity:0;
+
+    transition:.4s;
+
+}
+
+.feature:hover{
+
+    transform:translateY(-10px);
+
+    border-color:rgba(0,140,255,.5);
+
+    box-shadow:
+        0 20px 60px rgba(0,100,255,.08);
+
+}
+
+.feature:hover:before{
+
+    opacity:.15;
+
+}
+
+.feature-icon{
+
+    font-size:35px;
+
+    margin-bottom:30px;
+
+}
+
+.feature h3{
+
+    font-size:15px;
+
+    margin-bottom:15px;
+
+}
+
+.feature p{
+
+    color:#666;
+
+    font-size:12px;
+
+    line-height:1.8;
+
+}
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats{
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0,100,255,.08),
+            transparent 45%
+        );
+}
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:15px;
+
+}
+
+.stat{
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    border-top:1px solid #1b1b1b;
+
+    border-bottom:1px solid #1b1b1b;
+
+}
+
+.stat-number{
+
+    font-size:40px;
+
+    font-weight:900;
+
+    margin-bottom:15px;
+
+}
+
+.stat-label{
+
+    color:#555;
+
+    font-size:9px;
+
+    letter-spacing:3px;
+
+}
+
+/* =========================================================
+   LEGENDS
+========================================================= */
+
+.legends{
+
+    background:#050505;
+
+}
+
+.legend-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+.legend{
+
+    padding:30px;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:20px;
+
+    background:#080808;
+
+    transition:.3s;
+
+}
+
+.legend:hover{
+
+    border-color:#008cff;
+
+    transform:translateY(-5px);
+
+}
+
+.legend-top{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:25px;
+
+}
+
+.avatar{
+
+    width:55px;
+
+    height:55px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(circle,#008cff,#06101b);
+
+    border:1px solid #008cff;
+
+    font-size:20px;
+
+    box-shadow:0 0 20px rgba(0,140,255,.25);
+
+}
+
+.legend-name{
+
+    font-size:13px;
+
+}
+
+.legend-rank{
+
+    color:#008cff;
+
+    font-size:8px;
+
+    letter-spacing:2px;
+
+    margin-top:6px;
+
+}
+
+.legend-bar{
+
+    height:3px;
+
+    background:#161616;
+
+    border-radius:5px;
+
+    overflow:hidden;
+
+}
+
+.legend-progress{
+
+    height:100%;
+
+    background:#008cff;
+
+    box-shadow:0 0 10px #008cff;
+
+}
+
+/* =========================================================
+   RULES
+========================================================= */
+
+.rules{
+
+    background:
+        linear-gradient(
+            180deg,
+            #050505,
+            #030303
+        );
+
+}
+
+.rules-list{
+
+    max-width:900px;
+
+}
+
+.rule{
+
+    display:grid;
+
+    grid-template-columns:80px 1fr;
+
+    gap:20px;
+
+    padding:28px 0;
+
+    border-bottom:1px solid #161616;
+
+}
+
+.rule-number{
+
+    color:#008cff;
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+}
+
+.rule h3{
+
+    font-size:15px;
+
+    margin-bottom:10px;
+
+}
+
+.rule p{
+
+    color:#666;
+
+    font-size:12px;
+
+    line-height:1.8;
+
+}
+
+/* =========================================================
+   JOIN
+========================================================= */
+
+.join{
+
+    min-height:80vh;
+
+    text-align:center;
+
+}
+
+.join-box{
+
+    width:100%;
+
+    max-width:850px;
+
+    padding:80px 30px;
+
+    border-radius:30px;
+
+    border:1px solid rgba(0,140,255,.2);
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0,140,255,.09),
+            rgba(255,255,255,.01)
+        );
+
+    box-shadow:
+        0 0 100px rgba(0,100,255,.05);
+
+}
+
+.join-logo{
+
+    font-size:55px;
+
+    margin-bottom:30px;
+
+    text-shadow:
+        0 0 20px #008cff,
+        0 0 50px rgba(0,140,255,.5);
+
+}
+
+.join-box h2{
+
+    font-size:35px;
+
+    margin-bottom:20px;
+
+}
+
+.join-box p{
+
+    color:#666;
+
+    max-width:550px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    padding:70px 20px;
+
+    text-align:center;
+
+    border-top:1px solid #111;
+
+    background:#020202;
+
+}
+
+.footer-logo{
+
+    font-size:28px;
+
+    font-weight:900;
+
+    margin-bottom:20px;
+
+    text-shadow:0 0 20px #008cff;
+
+}
+
+.footer-text{
+
+    color:#444;
+
+    font-size:10px;
+
+    letter-spacing:3px;
+
+}
+
+.footer-line{
+
+    width:50px;
+
+    height:1px;
+
+    background:#008cff;
+
+    margin:25px auto;
+
+}
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:1s ease;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:850px){
+
+    .nav-links{
+
+        display:none;
+
+    }
+
+    .online{
+
+        display:none;
+
+    }
+
+    .about-grid{
+
+        grid-template-columns:1fr;
+
+        gap:40px;
+
+    }
+
+    .feature-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .stats-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .legend-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:550px){
+
+    section{
+
+        padding:100px 20px;
+
+    }
+
+    .logo{
+
+        font-size:40px;
+
+    }
+
+    .hero-title{
+
+        font-size:10px;
+
+        letter-spacing:5px;
+
+    }
+
+    .hero-description{
+
+        font-size:12px;
+
+    }
+
+    .stats-grid{
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+    .stat-number{
+
+        font-size:28px;
+
+    }
+
+    .join-box{
+
+        padding:60px 20px;
+
+    }
+
+    .join-logo{
+
+        font-size:38px;
+
+    }
+
+    .join-box h2{
+
+        font-size:25px;
+
+    }
+
+}
+
+/* =========================================================
+   CUSTOM SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#020202;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#008cff;
+
+    border-radius:10px;
+
+}
+
 </style>
+
 </head>
+
+
 <body>
 
-<nav class="navbar"><div class="wrap nav">
-  <div class="logoText">AG</div>
-  <div class="brand"><b>AMIRYAN</b><small>GAME BUSINESS COMPANY</small></div>
-  <div class="links"><a href="#about">درباره ما</a><a href="#team">تیم</a><a href="#achievements">دستاوردها</a><a href="#activities">فعالیت‌ها</a><a href="#support">پشتیبانی</a></div>
-</div></nav>
+<div class="noise"></div>
+<div class="grid"></div>
 
-<header class="hero">
- <div class="wrap heroGrid">
-  <div>
-    <div class="tag" style="font-size:11px;font-weight:700">AMIRYAN · GAME BUSINESS COMPANY</div>
-    <h1><span style="display:block;font-size:.42em;letter-spacing:6px;margin-bottom:12px;direction:ltr">AMIRYAN</span>شرکت کسب‌وکار<br>گیم امیریان</h1>
-    <p>امیریان یک مجموعه گیم‌محور با نگاه خلاقانه به دنیای بازی، پروژه‌های دیجیتال، رقابت، رویداد و توسعه ایده‌های تازه است. این مجموعه با هدف ایجاد یک ساختار منظم برای فعالیت‌های گیمری شکل گرفته و مسیر خود را با تمرکز بر رشد، همکاری و ساخت تجربه‌های متفاوت ادامه می‌دهد.</p>
-  </div>
-  <div class="heroPanel">
-    <div class="console">
-      <div class="consoleRing"></div>
-      <div class="consoleTitle">AMIRYAN GAMING NETWORK<br>CORE SYSTEM: ONLINE<br>MISSION: CREATE · COMPETE · GROW</div>
-      <div class="consoleBig">AMIRYAN</div>
-      <div class="consoleStatus">GAME BUSINESS: ACTIVE<br>DIGITAL PROJECTS: ACTIVE<br>TEAM NETWORK: ONLINE<br>ACHIEVEMENTS: 30 MEDALS</div>
+
+<!-- PARTICLES -->
+
+<div class="particle" style="left:5%;animation-duration:13s;"></div>
+<div class="particle" style="left:12%;animation-duration:17s;"></div>
+<div class="particle" style="left:19%;animation-duration:11s;"></div>
+<div class="particle" style="left:27%;animation-duration:19s;"></div>
+<div class="particle" style="left:35%;animation-duration:15s;"></div>
+<div class="particle" style="left:43%;animation-duration:12s;"></div>
+<div class="particle" style="left:51%;animation-duration:18s;"></div>
+<div class="particle" style="left:59%;animation-duration:14s;"></div>
+<div class="particle" style="left:67%;animation-duration:20s;"></div>
+<div class="particle" style="left:75%;animation-duration:16s;"></div>
+<div class="particle" style="left:83%;animation-duration:12s;"></div>
+<div class="particle" style="left:91%;animation-duration:18s;"></div>
+
+
+<!-- NAVIGATION -->
+
+<nav class="nav">
+
+    <div class="nav-logo">
+        ⚡𝚇.𝙸𝙾ヅ⚔️
     </div>
-  </div>
- </div>
-</header>
 
-<div class="wrap stats">
- <div class="stat"><b>۳۰</b><small>مدال رسمی</small></div>
- <div class="stat"><b>۸</b><small>عضو در ساختار تیم</small></div>
- <div class="stat"><b>۳</b><small>نفر در هسته اولیه</small></div>
- <div class="stat"><b>GAME+</b><small>تمرکز بر گیم و دیجیتال</small></div>
+    <div class="nav-links">
+
+        <a href="#about">ABOUT</a>
+
+        <a href="#features">FEATURES</a>
+
+        <a href="#stats">STATS</a>
+
+        <a href="#legends">LEGENDS</a>
+
+        <a href="#rules">RULES</a>
+
+    </div>
+
+    <div class="online">
+        <span>●</span> ONLINE
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-glow"></div>
+
+    <div class="hero-content">
+
+        <div class="logo">
+            ⚡𝚇.𝙸𝙾ヅ⚔️
+        </div>
+
+        <div class="hero-line"></div>
+
+        <div class="hero-title">
+            WE ARE X.IO
+        </div>
+
+        <p class="hero-description">
+
+            NOT JUST A NAME.
+            <br>
+            NOT JUST A GROUP.
+            <br>
+            THIS IS X.IO.
+
+        </p>
+
+        <div class="hero-members">
+            36,000,000+ MEMBERS
+        </div>
+
+    </div>
+
+    <div class="scroll">
+
+        SCROLL TO EXPLORE
+
+        <div class="scroll-arrow">
+            ↓
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<div class="section-container reveal">
+
+    <div class="about-grid">
+
+        <div class="about-text">
+
+            <div class="section-heading">
+
+                <div class="section-number">
+                    01 / ABOUT
+                </div>
+
+                <h2>
+                    THIS IS<br>
+                    <span style="color:#008cff;">
+                        X.IO
+                    </span>
+                </h2>
+
+            </div>
+
+            <p>
+                X.IO is a massive community built around
+                <span class="highlight">
+                    gaming, creativity, friendship and competition.
+                </span>
+            </p>
+
+            <p>
+                Everyone has a different name.
+                Everyone has a different style.
+                But together, we create one identity.
+            </p>
+
+            <p>
+                Welcome to the community.
+            </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <div class="big-number">
+                36M+
+            </div>
+
+            <div class="small-label">
+                MEMBERS OF THE COMMUNITY
+            </div>
+
+            <br>
+
+            <div style="color:#555;line-height:2;font-size:12px;">
+                One community.<br>
+                Thousands of stories.<br>
+                Unlimited memories.
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
 
-<section class="section" id="about"><div class="wrap">
- <div class="head"><div><div class="eyebrow">OUR STORY</div><h2>داستان شکل‌گیری امیریان</h2></div><div class="muted">از یک ایده کوچک تا ساخت یک تیم منظم</div></div>
- <div class="timeline">
-  <div class="step"><div class="num">01</div><div><h3>شروع با یک ایده</h3><p>ایده اولیه امیریان بر این اساس شکل گرفت که گیم فقط یک سرگرمی نباشد؛ بلکه بتواند به بستری برای خلاقیت، مدیریت، رقابت، کار تیمی و ساخت پروژه‌های دیجیتال تبدیل شود.</p></div></div>
-  <div class="step"><div class="num">02</div><div><h3>هسته اولیه سه‌نفره</h3><p>فعالیت مجموعه با همکاری سه نفر آغاز شد. در این مرحله، مسئولیت‌ها به‌صورت ساده تقسیم شده بود و تمرکز اصلی روی شکل‌دادن هویت مجموعه و مسیر آینده قرار داشت.</p></div></div>
-  <div class="step"><div class="num">03</div><div><h3>گسترش ساختار تیم</h3><p>با افزایش فعالیت‌ها، مجموعه به ساختار منظم‌تری رسید و مسئولیت‌های مدیریتی، برنامه‌ریزی، امور مالی، هماهنگی و پشتیبانی میان اعضا تقسیم شد.</p></div></div>
-  <div class="step"><div class="num">04</div><div><h3>تمرکز بر آینده گیم</h3><p>در حال حاضر، امیریان مسیر خود را با تمرکز بر پروژه‌های گیمری، رویدادها، ایده‌های دیجیتال و توسعه جامعه گیمرها ادامه می‌دهد.</p></div></div>
- </div>
-</div></section>
+</section>
 
-<section class="section" id="team"><div class="wrap">
- <div class="head"><div><div class="eyebrow">OUR TEAM</div><h2>اعضای شرکت</h2></div><div class="muted">ساختار مدیریتی و اجرایی شرکت کسب‌وکار گیم امیریان</div></div>
- <div class="team">
-  <div class="person"><div class="role">مدیرعامل</div><h3>جناب آقای امیرعباس میری</h3></div>
-  <div class="person"><div class="role">معاون</div><h3>جناب آقای محمد طاها کوشکی</h3></div>
-  <div class="person"><div class="role">معاون</div><h3>جناب آقای آرتا کوشمی</h3></div>
-  <div class="person"><div class="role">منشی</div><h3>سرکار خانم فاطمه میری</h3></div>
-  <div class="person"><div class="role">برنامه‌ریز</div><h3>جناب آقای دانیال میری</h3></div>
-  <div class="person"><div class="role">معاون</div><h3>سرکار خانم هاجر میری</h3></div>
-  <div class="person"><div class="role">منشی دوم</div><h3>سرکار خانم عاطی میری</h3></div>
-  <div class="person"><div class="role">رئیس بخش مالی</div><h3>جناب آقای حسین میرعالی</h3></div>
- </div>
-</div></section>
 
-<section class="section" id="achievements"><div class="wrap">
- <div class="head"><div><div class="eyebrow">ACHIEVEMENTS</div><h2>مدال‌ها و دستاوردهای ما</h2></div></div>
- <div class="achievementHero">
-   <div class="medalNum">۳۰</div>
-   <h2>مدال رسمی</h2>
-   <p class="muted">یکی از مهم‌ترین افتخارات مجموعه، ثبت ۳۰ مدال رسمی در مسیر فعالیت‌های گیمری و رقابتی است؛ دستاوردی که برای ما نماد تلاش، تمرین، رقابت و ادامه‌دادن مسیر رشد است.</p>
- </div>
- <div class="achievementGrid">
-  <div class="achievement"><div class="icon">🏅</div><h3>۳۰ مدال رسمی</h3><p class="muted">مجموعه‌ای از افتخارات رسمی که نشان‌دهنده استمرار در رقابت و فعالیت گیمری است.</p><strong>30 MEDALS</strong></div>
-  <div class="achievement"><div class="icon">👥</div><h3>گسترش تیم</h3><p class="muted">حرکت از یک هسته اولیه سه‌نفره به ساختاری با مسئولیت‌های مدیریتی، مالی و اجرایی مشخص.</p><strong>TEAM GROWTH</strong></div>
-  <div class="achievement"><div class="icon">🎮</div><h3>هویت گیمری مستقل</h3><p class="muted">ساخت یک هویت مستقل برای فعالیت در فضای گیم، پروژه‌های دیجیتال و رویدادهای مرتبط.</p><strong>GAMING IDENTITY</strong></div>
-  <div class="achievement"><div class="icon">💻</div><h3>پروژه‌های دیجیتال</h3><p class="muted">توسعه ایده‌های مرتبط با سایت، برنامه و ابزارهایی که در خدمت فعالیت‌های گیمری مجموعه قرار می‌گیرند.</p><strong>DIGITAL PROJECTS</strong></div>
-  <div class="achievement"><div class="icon">🏆</div><h3>فرهنگ رقابت</h3><p class="muted">توجه به مسابقه، چالش، پیشرفت مهارت و ایجاد انگیزه برای اعضای مجموعه.</p><strong>COMPETITION</strong></div>
-  <div class="achievement"><div class="icon">🚀</div><h3>مسیر توسعه</h3><p class="muted">تمرکز بر رشد مجموعه، اضافه‌کردن ایده‌های تازه و ساخت تجربه‌های بهتر در آینده.</p><strong>FUTURE READY</strong></div>
- </div>
-</div></section>
+<!-- FEATURES -->
 
-<section class="section" id="activities"><div class="wrap">
- <div class="head"><div><div class="eyebrow">GAME BUSINESS</div><h2>حوزه‌های فعالیت</h2></div></div>
- <div class="grid4">
-  <div class="card"><div class="icon">🎮</div><h3>کسب‌وکار گیم</h3><p>توسعه ایده‌ها و فعالیت‌هایی که با بازی، گیمرها و خدمات مرتبط با دنیای گیم ارتباط دارند.</p></div>
-  <div class="card"><div class="icon">🏆</div><h3>رویداد و رقابت</h3><p>برنامه‌ریزی برای چالش‌ها، رقابت‌ها و فعالیت‌هایی که حس پیشرفت و هیجان را در مجموعه تقویت می‌کنند.</p></div>
-  <div class="card"><div class="icon">💻</div><h3>محصولات دیجیتال</h3><p>طراحی سایت، برنامه و ابزارهای دیجیتال متناسب با نیازهای گیمری و پروژه‌های داخلی مجموعه.</p></div>
-  <div class="card"><div class="icon">🧠</div><h3>ایده‌پردازی</h3><p>تبدیل ایده‌های خام به پروژه‌هایی منظم، قابل اجرا و قابل توسعه در فضای گیم و فناوری.</p></div>
-  <div class="card"><div class="icon">👾</div><h3>جامعه گیمرها</h3><p>ایجاد فضایی برای ارتباط، همکاری، یادگیری و رقابت میان اعضا و گیمرهای علاقه‌مند.</p></div>
-  <div class="card"><div class="icon">🛡️</div><h3>مدیریت ساختاری</h3><p>تقسیم مسئولیت‌ها و ایجاد نظم در بخش‌های مدیریت، برنامه‌ریزی، مالی و پشتیبانی.</p></div>
-  <div class="card"><div class="icon">⚡</div><h3>چالش‌های ویژه</h3><p>طراحی فعالیت‌های کوتاه و جذاب برای افزایش مشارکت و تجربه رقابتی اعضا.</p></div>
-  <div class="card"><div class="icon">🌐</div><h3>حضور دیجیتال</h3><p>توسعه حضور مجموعه در فضای آنلاین و ایجاد بستری برای معرفی فعالیت‌ها و ارتباط با کاربران.</p></div>
- </div>
-</div></section>
+<section class="features" id="features">
 
-<section class="section"><div class="wrap">
- <div class="gameBox">
-  <div class="eyebrow">OUR VISION</div>
-  <h2>چشم‌انداز امیریان</h2>
-  <p>چشم‌انداز شرکت کسب‌وکار گیم امیریان، ساخت مجموعه‌ای منظم و خلاق در فضای گیم است؛ مجموعه‌ای که بتواند علاوه بر بازی و رقابت، به تولید ایده، توسعه پروژه‌های دیجیتال، تقویت کار تیمی و ایجاد فرصت‌های تازه برای اعضا بپردازد.</p>
-  <p>هدف ما این است که هر فعالیت، از یک چالش ساده تا یک پروژه دیجیتال، با برنامه‌ریزی، احترام به اعضا و نگاه رو به آینده انجام شود.</p>
- </div>
-</div></section>
+<div class="section-container reveal">
 
-<section class="section"><div class="wrap">
- <div class="head"><div><div class="eyebrow">OUR VALUES</div><h2>ارزش‌های ما</h2></div></div>
- <div class="values">
-  <div class="value"><b>احترام</b><small>رفتار محترمانه با اعضا و کاربران</small></div>
-  <div class="value"><b>خلاقیت</b><small>ساخت ایده‌های تازه و متفاوت</small></div>
-  <div class="value"><b>رقابت سالم</b><small>پیشرفت از مسیر چالش و مهارت</small></div>
-  <div class="value"><b>کار تیمی</b><small>تقسیم مسئولیت و همکاری منظم</small></div>
- </div>
-</div></section>
+    <div class="section-heading">
 
-<section class="section" id="support"><div class="wrap">
- <div class="head"><div><div class="eyebrow">SUPPORT</div><h2>پشتیبانی و ارتباط با ما</h2></div></div>
- <div class="support">
-  <div class="supportCard"><h3>راه ارتباطی رسمی</h3><p class="muted">برای دریافت اطلاعات، هماهنگی، پیشنهاد همکاری یا پیگیری موضوعات مربوط به مجموعه، واحد پشتیبانی با احترام پاسخ‌گوی شماست.</p><div class="phone">09303332476</div><div class="channels"><span class="pill">بله</span><span class="pill">ایتا</span><span class="pill">واتساپ</span><span class="pill">اینستاگرام</span></div></div>
-  <div class="supportCard"><h3>شیوه ارتباط</h3><p class="muted">خواهشمند است هنگام ارسال پیام، موضوع درخواست خود را به‌صورت روشن بیان فرمایید تا پیگیری آن سریع‌تر انجام شود. تیم پشتیبانی تلاش می‌کند پاسخ‌گویی با نظم، احترام و دقت انجام شود.</p></div>
- </div>
-</div></section>
+        <div class="section-number">
+            02 / FEATURES
+        </div>
 
-<footer class="footer"><div class="wrap">
- © 2026 AMIRYAN GAME BUSINESS COMPANY<br>
- سایت شرکت کسب و کار گیم امیریان · تمامی حقوق محفوظ است.
-</div></footer>
+        <h2>
+            X.IO EXPERIENCE
+        </h2>
 
-</body></html>
+        <p>
+            Everything that makes the community different.
+        </p>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ⚡
+            </div>
+
+            <h3>
+                POWER
+            </h3>
+
+            <p>
+                Energy, competition and a community
+                that never stops moving.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ⚔️
+            </div>
+
+            <h3>
+                BATTLE
+            </h3>
+
+            <p>
+                Challenge your friends, build your reputation
+                and become one of the legends.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                👑
+            </div>
+
+            <h3>
+                ELITE
+            </h3>
+
+            <p>
+                Create your identity and stand out
+                from everyone else.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🎮
+            </div>
+
+            <h3>
+                GAMING
+            </h3>
+
+            <p>
+                A place for gamers, creators and people
+                who live for competition.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🔥
+            </div>
+
+            <h3>
+                EVENTS
+            </h3>
+
+            <p>
+                Community events, competitions
+                and unforgettable moments.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                💎
+            </div>
+
+            <h3>
+                STATUS
+            </h3>
+
+            <p>
+                Build your name and become
+                recognizable inside X.IO.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- STATS -->
+
+<section class="stats" id="stats">
+
+<div class="section-container reveal">
+
+    <div class="section-heading">
+
+        <div class="section-number">
+            03 / STATISTICS
+        </div>
+
+        <h2>
+            THE NUMBERS
+        </h2>
+
+    </div>
+
+
+    <div class="stats-grid">
+
+
+        <div class="stat">
+
+            <div class="stat-number">
+                36M+
+            </div>
+
+            <div class="stat-label">
+                MEMBERS
+            </div>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-number">
+                24/7
+            </div>
+
+            <div class="stat-label">
+                COMMUNITY
+            </div>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-number">
+                ∞
+            </div>
+
+            <div class="stat-label">
+                MEMORIES
+            </div>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-number">
+                #01
+            </div>
+
+            <div class="stat-label">
+                X.IO
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- LEGENDS -->
+
+<section class="legends" id="legends">
+
+<div class="section-container reveal">
+
+    <div class="section-heading">
+
+        <div class="section-number">
+            04 / LEGENDS
+        </div>
+
+        <h2>
+            X.IO LEGENDS
+        </h2>
+
+        <p>
+            The names that define the community.
+        </p>
+
+    </div>
+
+
+    <div class="legend-grid">
+
+
+        <div class="legend">
+
+            <div class="legend-top">
+
+                <div class="avatar">
+                    ⚡
+                </div>
+
+                <div>
+
+                    <div class="legend-name">
+                        X.IO LEADER
+                    </div>
+
+                    <div class="legend-rank">
+                        FOUNDER
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="legend-bar">
+                <div class="legend-progress" style="width:98%;"></div>
+            </div>
+
+        </div>
+
+
+        <div class="legend">
+
+            <div class="legend-top">
+
+                <div class="avatar">
+                    ⚔️
+                </div>
+
+                <div>
+
+                    <div class="legend-name">
+                        X.IO ELITE
+                    </div>
+
+                    <div class="legend-rank">
+                        ELITE MEMBER
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="legend-bar">
+                <div class="legend-progress" style="width:91%;"></div>
+            </div>
+
+        </div>
+
+
+        <div class="legend">
+
+            <div class="legend-top">
+
+                <div class="avatar">
+                    👑
+                </div>
+
+                <div>
+
+                    <div class="legend-name">
+                        X.IO LEGEND
+                    </div>
+
+                    <div class="legend-rank">
+                        LEGENDARY
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="legend-bar">
+                <div class="legend-progress" style="width:87%;"></div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- RULES -->
+
+<section class="rules" id="rules">
+
+<div class="section-container reveal">
+
+    <div class="section-heading">
+
+        <div class="section-number">
+            05 / RULES
+        </div>
+
+        <h2>
+            THE CODE
+        </h2>
+
+        <p>
+            Respect the community. Respect the name.
+        </p>
+
+    </div>
+
+
+    <div class="rules-list">
+
+
+        <div class="rule">
+
+            <div class="rule-number">
+                01
+            </div>
+
+            <div>
+
+                <h3>
+                    RESPECT
+                </h3>
+
+                <p>
+                    Treat every member with respect.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="rule">
+
+            <div class="rule-number">
+                02
+            </div>
+
+            <div>
+
+                <h3>
+                    NO SPAM
+                </h3>
+
+                <p>
+                    Keep the community clean and enjoyable.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="rule">
+
+            <div class="rule-number">
+                03
+            </div>
+
+            <div>
+
+                <h3>
+                    NO TOXICITY
+                </h3>
+
+                <p>
+                    Competition is welcome.
+                    Toxic behavior is not.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="rule">
+
+            <div class="rule-number">
+                04
+            </div>
+
+            <div>
+
+                <h3>
+                    HAVE FUN
+                </h3>
+
+                <p>
+                    At the end of the day,
+                    X.IO is here for fun.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- JOIN -->
+
+<section class="join">
+
+<div class="join-box reveal">
+
+    <div class="join-logo">
+        ⚡𝚇.𝙸𝙾ヅ⚔️
+    </div>
+
+    <h2>
+        ONE NAME.
+    </h2>
+
+    <p>
+        ONE COMMUNITY.
+        <br><br>
+        ONE IDENTITY.
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-logo">
+        ⚡𝚇.𝙸𝙾ヅ⚔️
+    </div>
+
+    <div class="footer-line"></div>
+
+    <div class="footer-text">
+        X.IO COMMUNITY
+    </div>
+
+    <br>
+
+    <div class="footer-text">
+        36,000,000+ MEMBERS
+    </div>
+
+    <br><br>
+
+    <div style="color:#222;font-size:9px;">
+        © 2026 X.IO — ALL RIGHTS RESERVED
+    </div>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const reveals =
+document.querySelectorAll(".reveal");
+
+function revealOnScroll(){
+
+    const windowHeight =
+        window.innerHeight;
+
+    reveals.forEach(element => {
+
+        const top =
+            element.getBoundingClientRect().top;
+
+        if(top < windowHeight - 100){
+
+            element.classList.add("active");
+
+        }
+
+    });
+
+}
+
+window.addEventListener(
+    "scroll",
+    revealOnScroll
+);
+
+revealOnScroll();
+
+
+/* =========================================================
+   PARALLAX GRID
+========================================================= */
+
+window.addEventListener("scroll",function(){
+
+    const scroll =
+        window.scrollY;
+
+    const grid =
+        document.querySelector(".grid");
+
+    grid.style.transform =
+        "translateY(" + (scroll * .08) + "px)";
+
+});
+
+
+/* =========================================================
+   RANDOM PARTICLES
+========================================================= */
+
+for(let i=0;i<25;i++){
+
+    const p =
+        document.createElement("div");
+
+    p.className="particle";
+
+    p.style.left =
+        Math.random()*100+"%";
+
+    p.style.animationDuration =
+        (8+Math.random()*15)+"s";
+
+    p.style.animationDelay =
+        Math.random()*10+"s";
+
+    p.style.opacity =
+        Math.random()*.5;
+
+    document.body.appendChild(p);
+
+}
+
+</script>
+
+</body>
+             </html>
